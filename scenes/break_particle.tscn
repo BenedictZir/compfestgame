@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://1kmdjxkrenbs"]
+[gd_scene load_steps=3 format=3 uid="uid://1kmdjxkrenbs"]
+
+[sub_resource type="Curve" id="Curve_ohnij"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_i2jqf"]
+offsets = PackedFloat32Array(0.46, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="break_particle" type="CPUParticles2D"]
+self_modulate = Color(0.309804, 0.568627, 1, 1)
+amount = 50
+speed_scale = 1.1
+explosiveness = 1.0
+lifetime_randomness = 0.5
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 500.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_ohnij")
+color_ramp = SubResource("Gradient_i2jqf")

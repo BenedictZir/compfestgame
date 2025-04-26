@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpo4uc7e0ss8s"]
+[gd_scene load_steps=5 format=3 uid="uid://cpo4uc7e0ss8s"]
 
+[ext_resource type="Script" path="res://scripts/shield.gd" id="1_putdq"]
 [ext_resource type="Texture2D" uid="uid://uy1585637ilh" path="res://assets/bubble.png" id="1_uydyo"]
 [ext_resource type="Texture2D" uid="uid://ctk4b032nvqpj" path="res://assets/border.png" id="2_un5ph"]
+[ext_resource type="PackedScene" uid="uid://1kmdjxkrenbs" path="res://scenes/break_particle.tscn" id="3_kp28e"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v33gi"]
-radius = 32.0
-
-[node name="shield" type="StaticBody2D"]
+[node name="shield" type="Node2D"]
 position = Vector2(-8, -1)
+script = ExtResource("1_putdq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="break_particle" parent="." instance=ExtResource("3_kp28e")]
+self_modulate = Color(0.31, 0.569, 2, 1)
+position = Vector2(-60, 6)
+emitting = false
+amount = 20
+one_shot = true
+
+[node name="shield_sprite" type="Sprite2D" parent="."]
+
+[node name="Sprite2D1" type="Sprite2D" parent="shield_sprite"]
 self_modulate = Color(1, 1, 1, 0.364706)
 position = Vector2(-60, 6)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_uydyo")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="shield_sprite"]
 position = Vector2(-60, 6)
 scale = Vector2(0.078125, 0.078125)
 texture = ExtResource("2_un5ph")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-60, 6)
-shape = SubResource("CircleShape2D_v33gi")

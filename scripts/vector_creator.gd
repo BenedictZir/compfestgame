@@ -55,8 +55,10 @@ func _input(event: InputEvent) -> void:
 		var target_rotation = vector.angle() 
 		arrow_sprite.rotation = lerp_angle(arrow_sprite.rotation, target_rotation, 0.5)
 		var direction = vector.normalized()  # Dapatkan arah vektor
-		arrow_sprite.global_position = sprite_2d.global_position  + (direction * (min(200, vector.length() / 10)))
-		arrow_sprite.scale.x = min((vector.length() / 20000.0), 0.1) 
+		var vector_length = min(vector.length(), maximum_length)
+		#print(vector_length)
+		arrow_sprite.global_position = sprite_2d.global_position  + (direction * (min(200, vector_length / 10)))
+		arrow_sprite.scale.x = min((vector_length / 20000.0), 0.1) 
 		#print(arrow_sprite.scale.x)
 		lowpass.cutoff_hz = max(2000, lowpass.cutoff_hz - 500)
 		bass = min(6, bass + 0.5)

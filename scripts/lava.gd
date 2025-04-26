@@ -25,7 +25,8 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 			camera_2d.apply_shake(50, 5.0)
 
 
-
+func lava():
+	pass
 #func _on_destroyzone_body_entered(body: Node2D) -> void:
 	#if (!body.has_method("wall")):
 		#body.queue_free()

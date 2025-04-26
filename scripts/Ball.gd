@@ -11,6 +11,7 @@ extends RigidBody2D
 @onready var deadsfx: AudioStreamPlayer2D = $deadsfx
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var area_2d: Area2D = $Area2D
+@onready var shield: Node2D = $shield
 
 var launching_up := false
 var died = false
@@ -52,7 +53,7 @@ func ball():
 
 func activate_shield():
 	shieldIsActive = true
-	#shield.visible = true
+	shield.visible = true
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -67,9 +68,10 @@ func _on_kill_ball(killer: Variant) -> void:
 		pass
 		if (killer.has_method("block")):
 			killer.queue_free()
-	elif (shieldIsActive):
+	elif (shieldIsActive && !killer.has_method("lava")):
 		shieldIsActive = false
-		#shield.visible = false
+		shield.break_particle.emitting = true
+		shield.shield_sprite.visible = false
 	else:
 		deadsfx.play()
 		died = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnnaw48i71s22"]
+[gd_scene load_steps=15 format=3 uid="uid://cnnaw48i71s22"]
 
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="1_1ksm1"]
 [ext_resource type="Texture2D" uid="uid://v1kedh7t1ya2" path="res://assets/circle-512.png" id="1_lm1xb"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bo0dluxj2dkn2" path="res://assets/sfx/tuuuit.wav" id="6_yg3jg"]
 [ext_resource type="AudioStream" uid="uid://dmgebnn1e1qu5" path="res://assets/sfx/error.wav" id="7_i5col"]
 [ext_resource type="AudioStream" uid="uid://b2ctgkfya0nam" path="res://assets/sfx/hitHurt.wav" id="8_3lplf"]
+[ext_resource type="PackedScene" uid="uid://cpo4uc7e0ss8s" path="res://scenes/shield.tscn" id="9_133u7"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="10_ccndw"]
 [ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/blood_particle.tscn" id="11_c38lg"]
 
@@ -88,6 +89,11 @@ initial_velocity_max = 600.0
 scale_amount_min = 40.0
 scale_amount_max = 45.0
 color = Color(1, 1, 1, 1)
+
+[node name="shield" parent="." instance=ExtResource("9_133u7")]
+visible = false
+position = Vector2(133, -15)
+scale = Vector2(2.2, 2.2)
 
 [connection signal="kill_ball" from="." to="." method="_on_kill_ball"]
 [connection signal="vector_created" from="VectorCreator" to="." method="launch"]
