@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dk18xwarpanol"]
+
+[node name="starting_paltform" type="Node2D"]
+scale = Vector2(1, 1.0177)

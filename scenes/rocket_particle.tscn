@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://co142fj3664v2"]
+
+[ext_resource type="Texture2D" uid="uid://4nebtjv3hal2" path="res://assets/circle-16.png" id="1_8pofp"]
+
+[sub_resource type="Curve" id="Curve_x2ok3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.384615), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_57u0c"]
+offsets = PackedFloat32Array(0, 0.193333, 0.386667, 0.633333, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.478431, 0.0745098, 1, 1, 0.739215, 0.254902, 1, 1, 1, 0.435294, 1, 1, 1, 1, 1)
+
+[node name="rocket_particle" type="CPUParticles2D"]
+process_mode = 3
+amount = 600
+lifetime = 0.4
+preprocess = 1.0
+speed_scale = 1.2
+texture = ExtResource("1_8pofp")
+emission_shape = 1
+emission_sphere_radius = 35.0
+direction = Vector2(0, 1)
+spread = 0.0
+radial_accel_min = -100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_x2ok3")
+color_ramp = SubResource("Gradient_57u0c")

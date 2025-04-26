@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1eee436hunpo"]
+
+[ext_resource type="Script" path="res://scripts/blood_particle.gd" id="1_wcbjc"]
+
+[sub_resource type="Curve" id="Curve_5tobt"]
+_data = [Vector2(0, 1), 0.0, -0.945055, 0, 1, Vector2(1, 0.054945), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.8
+randomness = 1.0
+lifetime_randomness = 0.5
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+scale_amount_min = 8.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_5tobt")
+color = Color(0.545116, 0.159204, 1.44392e-07, 1)
+script = ExtResource("1_wcbjc")

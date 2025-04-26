@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1rk8r5sauvpy"]
+
+[ext_resource type="PackedScene" uid="uid://pypugkookp5r" path="res://scenes/two_block.tscn" id="1_tbkbt"]
+
+[node name="obstacle1" type="Node2D"]
+
+[node name="two_block" parent="." instance=ExtResource("1_tbkbt")]
+
+[node name="two_block2" parent="." instance=ExtResource("1_tbkbt")]
+position = Vector2(679, 0)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dfx5jn1n1swp4"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+scale = Vector2(1, 10)
+emitting = false
+amount = 11
+explosiveness = 0.77
+randomness = 0.41
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 1.2
+scale_amount_max = 1.5

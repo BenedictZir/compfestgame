@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpo4uc7e0ss8s"]
+
+[ext_resource type="Texture2D" uid="uid://uy1585637ilh" path="res://assets/bubble.png" id="1_uydyo"]
+[ext_resource type="Texture2D" uid="uid://ctk4b032nvqpj" path="res://assets/border.png" id="2_un5ph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v33gi"]
+radius = 32.0
+
+[node name="shield" type="StaticBody2D"]
+position = Vector2(-8, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.364706)
+position = Vector2(-60, 6)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_uydyo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-60, 6)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("2_un5ph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-60, 6)
+shape = SubResource("CircleShape2D_v33gi")

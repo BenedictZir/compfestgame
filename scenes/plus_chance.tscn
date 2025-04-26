@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba1gb01t3df4d"]
+
+[ext_resource type="Script" path="res://scripts/plus_chance.gd" id="1_wv374"]
+[ext_resource type="Texture2D" uid="uid://dsbuwvv5qj12t" path="res://assets/pngimg.com - plus_PNG6.png" id="2_42i7t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c6uf"]
+size = Vector2(200, 200)
+
+[node name="plus_chance" type="Area2D"]
+script = ExtResource("1_wv374")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7c6uf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.29625, 0.26875)
+texture = ExtResource("2_42i7t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

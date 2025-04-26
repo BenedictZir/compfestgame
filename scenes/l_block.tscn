@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3p67idhsxsv2"]
+
+[ext_resource type="PackedScene" uid="uid://pypugkookp5r" path="res://scenes/two_block.tscn" id="1_1nh64"]
+[ext_resource type="PackedScene" uid="uid://bb6enm8s770lh" path="res://scenes/normal_block.tscn" id="2_ry4ix"]
+
+[node name="L_block" type="Node2D"]
+
+[node name="two_block" parent="." instance=ExtResource("1_1nh64")]
+position = Vector2(-1, 175)
+
+[node name="normal_block" parent="." instance=ExtResource("2_ry4ix")]
+position = Vector2(300, 78)
