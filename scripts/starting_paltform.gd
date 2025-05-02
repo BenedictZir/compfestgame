@@ -1,14 +1,12 @@
-extends Node
-var camera_2d: Camera2D = null
-var chancetothrow := 10
-var gameStarted = false
-var bonus_score := 0
-var mega_shield_count := 0
+extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-		
+	if (GameManager.gameStarted):
+		queue_free()

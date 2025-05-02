@@ -1,4 +1,20 @@
-[gd_scene format=3 uid="uid://dk18xwarpanol"]
+[gd_scene load_steps=4 format=3 uid="uid://dk18xwarpanol"]
 
-[node name="starting_paltform" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bkceu3lgeclbj" path="res://assets/rectangle-512.png" id="1_w8rjc"]
+[ext_resource type="Script" path="res://scripts/starting_paltform.gd" id="1_xxxb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q73di"]
+size = Vector2(302, 42.2521)
+
+[node name="starting_paltform" type="StaticBody2D"]
 scale = Vector2(1, 1.0177)
+script = ExtResource("1_xxxb6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 24.5652)
+scale = Vector2(0.59082, 0.097877)
+texture = ExtResource("1_w8rjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25.0565)
+shape = SubResource("RectangleShape2D_q73di")

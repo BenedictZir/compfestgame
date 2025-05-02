@@ -49,12 +49,11 @@ func _input(event: InputEvent) -> void:
 		Engine.time_scale = 0.1
 		position_end = event.position
 		vector = -((position_end - position_start) * Vector2(10, 10)).clamp(Vector2(-maximum_length, -maximum_length), Vector2(maximum_length, maximum_length))
-			
 		arrow_sprite.visible = true  
-		#arrow_sprite.rotation = vector.angle()  # Putar panah sesuai arah vektor
+		#arrow_sprite.rotation = vector.angle()  
 		var target_rotation = vector.angle() 
 		arrow_sprite.rotation = lerp_angle(arrow_sprite.rotation, target_rotation, 0.5)
-		var direction = vector.normalized()  # Dapatkan arah vektor
+		var direction = vector.normalized()  
 		var vector_length = min(vector.length(), maximum_length)
 		#print(vector_length)
 		arrow_sprite.global_position = sprite_2d.global_position  + (direction * (min(200, vector_length / 10)))

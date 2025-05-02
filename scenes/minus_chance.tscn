@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca1dpjaktx0ev"]
+
+[ext_resource type="Script" path="res://scripts/minus_chance.gd" id="1_tiwki"]
+[ext_resource type="Texture2D" uid="uid://bkx7sb80woioa" path="res://assets/minus_chance.png" id="2_75ox3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28v0h"]
+size = Vector2(200, 200)
+
+[node name="minus_chance" type="Area2D"]
+script = ExtResource("1_tiwki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_28v0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.66595e-05, 8.34465e-07)
+scale = Vector2(0.195313, 0.195313)
+texture = ExtResource("2_75ox3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,5 @@
 extends Node2D
 var wall_x_coordinate := [-153, 1046]
-@onready var camera_2d: Camera2D = $"../Camera2D"
 @onready var walls: Node2D = $"."
 
 var wall_scene = preload("res://scenes/wall.tscn")
@@ -16,7 +15,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if (camera_2d.position.y - last_y < spawn_distance + 2000):
+	if (GameManager.camera_2d.position.y - last_y < spawn_distance + 2000):
 		spawn_walls()
 	for wall in get_children():
 		if wall.position.y > lava.position.y + 4500:

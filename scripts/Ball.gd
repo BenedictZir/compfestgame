@@ -6,7 +6,6 @@ extends RigidBody2D
 @onready var rocketsfx: AudioStreamPlayer2D = $rocketsfx
 @onready var nochancesfx: AudioStreamPlayer2D = $nochancesfx
 @onready var collidingsfx: AudioStreamPlayer2D = $collidingsfx
-@onready var camera_2d: Camera2D = $"../Camera2D"
 @onready var deadparticle: CPUParticles2D = $deadparticle
 @onready var deadsfx: AudioStreamPlayer2D = $deadsfx
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -30,6 +29,8 @@ func launch(force: Vector2) -> void:
 
 		return
 	if (abs(force.x) > 300 or abs(force.y)  > 300):
+		if (!GameManager.gameStarted):
+			GameManager.gameStarted = true
 		GameManager.chancetothrow -= 1
 		linear_velocity = Vector2.ZERO
 		apply_impulse(force * 1.2)
@@ -39,13 +40,13 @@ func launch_up():
 		launching_up = true
 		linear_velocity = Vector2.ZERO
 		rocket_particle.emitting = true
-		
 		var target_y = global_position.y - 5000
 		rocketsfx.play()
 		var tween = create_tween()
 		tween.tween_property(self, "position:y", target_y, 2.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await tween.finished
 		rocket_particle.emitting = false
+		await get_tree().create_timer(0.55).timeout
 		launching_up = false
 		
 func ball():
@@ -59,14 +60,16 @@ func activate_shield():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.has_method("block") or body.has_method("wall")):
 		if (not launching_up):
-			camera_2d.apply_shake(2, 10)
+			
+			GameManager.camera_2d.apply_shake(2, 10)
 		collidingsfx.play()
 
 
 func _on_kill_ball(killer: Variant) -> void:
 	if (launching_up):
 		pass
-		if (killer.has_method("block")):
+		if (killer.has_method("spike")):
+			collidingsfx.play()
 			killer.queue_free()
 	elif (shieldIsActive && !killer.has_method("lava")):
 		shieldIsActive = false
@@ -83,5 +86,6 @@ func _on_kill_ball(killer: Variant) -> void:
 		area_2d.queue_free()
 		collision_shape_2d.queue_free()
 		vector_creator.queue_free()
+		GameManager.camera_2d.apply_shake(50, 5.0)
 		await get_tree().create_timer(deadparticle.lifetime).timeout
 		queue_free()

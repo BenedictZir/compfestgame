@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnnaw48i71s22"]
+[gd_scene load_steps=17 format=3 uid="uid://cnnaw48i71s22"]
 
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="1_1ksm1"]
 [ext_resource type="Texture2D" uid="uid://v1kedh7t1ya2" path="res://assets/circle-512.png" id="1_lm1xb"]
@@ -10,11 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://b2ctgkfya0nam" path="res://assets/sfx/hitHurt.wav" id="8_3lplf"]
 [ext_resource type="PackedScene" uid="uid://cpo4uc7e0ss8s" path="res://scenes/shield.tscn" id="9_133u7"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="10_ccndw"]
-[ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/blood_particle.tscn" id="11_c38lg"]
+[ext_resource type="PackedScene" uid="uid://1kmdjxkrenbs" path="res://scenes/break_particle.tscn" id="12_6lf2w"]
+[ext_resource type="PackedScene" uid="uid://b88hvnnrngoo7" path="res://scenes/mega_shield.tscn" id="12_pp50y"]
+[ext_resource type="Texture2D" uid="uid://d285sdrikok5w" path="res://assets/Tile_27.png" id="13_ayjkb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xhdy7"]
 friction = 0.2
-bounce = 0.8
+bounce = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmb00"]
 radius = 124.258
@@ -28,13 +30,13 @@ physics_material_override = SubResource("PhysicsMaterial_xhdy7")
 lock_rotation = true
 script = ExtResource("1_1ksm1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_cmb00")
-
 [node name="rocket_particle" parent="." instance=ExtResource("4_7dq1k")]
-position = Vector2(2, -4)
+position = Vector2(2, 33)
 emitting = false
+lifetime = 1.2
+preprocess = 0.4
+speed_scale = 1.8
+local_coords = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -42,9 +44,18 @@ position = Vector2(-1.07288e-06, 0)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_lm1xb")
 
-[node name="VectorCreator" parent="." instance=ExtResource("3_jbei5")]
-physics_interpolation_mode = 2
-position = Vector2(-560, -309)
+[node name="shield" parent="." instance=ExtResource("9_133u7")]
+visible = false
+position = Vector2(133, -15)
+scale = Vector2(2.2, 2.2)
+
+[node name="mega_shield" parent="." instance=ExtResource("12_pp50y")]
+position = Vector2(1, 4)
+scale = Vector2(2.3, 2.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_cmb00")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
@@ -80,21 +91,22 @@ stream = ExtResource("10_ccndw")
 volume_db = 2.0
 max_distance = 100000.0
 
-[node name="deadparticle" parent="." instance=ExtResource("11_c38lg")]
-position = Vector2(511, -205)
-amount = 15
-speed_scale = 3.0
-initial_velocity_min = 400.0
-initial_velocity_max = 600.0
-scale_amount_min = 40.0
-scale_amount_max = 45.0
-color = Color(1, 1, 1, 1)
+[node name="deadparticle" parent="." instance=ExtResource("12_6lf2w")]
+self_modulate = Color(1, 1, 1, 1)
+emitting = false
+amount = 60
+one_shot = true
+speed_scale = 2.0
 
-[node name="shield" parent="." instance=ExtResource("9_133u7")]
-visible = false
-position = Vector2(133, -15)
-scale = Vector2(2.2, 2.2)
+[node name="VectorCreator" parent="." instance=ExtResource("3_jbei5")]
+physics_interpolation_mode = 2
+position = Vector2(-547, -241)
+
+[node name="Tile27" type="Sprite2D" parent="."]
+position = Vector2(0, -62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_ayjkb")
 
 [connection signal="kill_ball" from="." to="." method="_on_kill_ball"]
-[connection signal="vector_created" from="VectorCreator" to="." method="launch"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="vector_created" from="VectorCreator" to="." method="launch"]

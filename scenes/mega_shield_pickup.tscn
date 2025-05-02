@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bht418dpb8ydu"]
+
+[ext_resource type="Script" path="res://scripts/mega_buff_pickup.gd" id="1_4s3vt"]
+[ext_resource type="Texture2D" uid="uid://dplmmqvc1uvv7" path="res://assets/mega_buff_icon.png" id="2_odbnj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51obq"]
+size = Vector2(203, 199)
+
+[node name="mega_shield_pickup" type="Area2D"]
+script = ExtResource("1_4s3vt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 1.00001)
+scale = Vector2(0.198242, 0.195313)
+texture = ExtResource("2_odbnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_51obq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
