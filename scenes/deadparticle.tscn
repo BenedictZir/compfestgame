@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1eee436hunpo"]
 
-[ext_resource type="Script" path="res://scripts/blood_particle.gd" id="1_wcbjc"]
+[ext_resource type="Script" path="res://scripts/blood_particle.gd" id="1_cdwc6"]
 
 [sub_resource type="Curve" id="Curve_5tobt"]
 _data = [Vector2(0, 1), 0.0, -0.945055, 0, 1, Vector2(1, 0.054945), 0.0, 0.0, 0, 0]
@@ -22,4 +22,4 @@ scale_amount_min = 8.0
 scale_amount_max = 15.0
 scale_amount_curve = SubResource("Curve_5tobt")
 color = Color(0.545116, 0.159204, 1.44392e-07, 1)
-script = ExtResource("1_wcbjc")
+script = ExtResource("1_cdwc6")

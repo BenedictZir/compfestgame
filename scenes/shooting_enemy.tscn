@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://catbnn8t5co5u"]
+[gd_scene load_steps=5 format=3 uid="uid://catbnn8t5co5u"]
 
-[node name="shooting_enemy" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/shooting_enemy.gd" id="1_r7oaq"]
+[ext_resource type="PackedScene" uid="uid://c7xnx5kr4x8ao" path="res://scenes/bullet.tscn" id="2_3k1ip"]
+[ext_resource type="Texture2D" uid="uid://cwl1mob5lk3on" path="res://icon.svg" id="3_1ac70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gkgp"]
+size = Vector2(134, 128)
+
+[node name="shooting_enemy" type="StaticBody2D"]
+script = ExtResource("1_r7oaq")
+bullets = ExtResource("2_3k1ip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_1ac70")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 3
+
+[node name="bullet_cooldown" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -57.0
+offset_top = -36.0
+offset_right = 115.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 40
+text = "turret
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_3gkgp")
+
+[connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/spike.gd" id="1_1hi71"]
 [ext_resource type="Texture2D" uid="uid://ifcnvjvi3ur3" path="res://assets/ccc89b38-0d5f-4199-a7e1-0d25088f20d1_removalai_preview.png" id="1_y6j3p"]
-[ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/blood_particle.tscn" id="3_s88ly"]
+[ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/deadparticle.tscn" id="3_s88ly"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="4_wh58s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m30fk"]
@@ -12,9 +12,11 @@ radius = 81.0015
 radius = 81.0062
 
 [node name="spike" type="StaticBody2D"]
+collision_mask = 2
 script = ExtResource("1_1hi71")
 
 [node name="killzone" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(104, 101.5)

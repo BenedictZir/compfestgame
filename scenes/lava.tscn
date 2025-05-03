@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/lava.gd" id="1_bk1m2"]
 [ext_resource type="Texture2D" uid="uid://xeah8jixpyl" path="res://assets/Tile_28.png" id="2_du58c"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="3_jrnwd"]
-[ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/blood_particle.tscn" id="5_eqwqa"]
+[ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/deadparticle.tscn" id="5_eqwqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_men42"]
 size = Vector2(1024, 504)
@@ -27,6 +27,8 @@ scale_amount_max = 45.0
 color = Color(1, 1, 1, 1)
 
 [node name="killzone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(512, 290)
@@ -413,6 +415,7 @@ scale_amount_max = 9.0
 color = Color(1, 0.670588, 0.278431, 1)
 
 [node name="destroyzone" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="destroyzone"]
 position = Vector2(512, 524)

@@ -26,10 +26,10 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 func lava():
 	pass
-#func _on_destroyzone_body_entered(body: Node2D) -> void:
-	#if (!body.has_method("wall")):
-		#body.queue_free()
-#
-#
-#func _on_destroyzone_area_entered(area: Area2D) -> void:
-	#area.queue_free()
+func _on_destroyzone_body_entered(body: Node2D) -> void:
+	if (!body.has_method("wall")):
+		body.queue_free()
+
+
+func _on_destroyzone_area_entered(area: Area2D) -> void:
+	area.queue_free()

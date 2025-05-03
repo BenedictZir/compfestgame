@@ -1,7 +1,9 @@
 extends RigidBody2D
-@onready var sprite_2d: Sprite2D = %Sprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var trail_2d: Line2D = $Trail2D
+
 @onready var rocket_particle: CPUParticles2D = $rocket_particle
-@onready var vector_creator: Area2D = $VectorCreator
+@onready var vector_creator: Area2D = $"../VectorCreator"
 @onready var throwsfx: AudioStreamPlayer2D = $throwsfx
 @onready var rocketsfx: AudioStreamPlayer2D = $rocketsfx
 @onready var nochancesfx: AudioStreamPlayer2D = $nochancesfx
@@ -37,15 +39,19 @@ func launch(force: Vector2) -> void:
 		throwsfx.play()
 
 func launch_up():
+		sprite_2d.rotation = rad_to_deg(0)
 		launching_up = true
 		linear_velocity = Vector2.ZERO
 		rocket_particle.emitting = true
+		trail_2d.visible = false
 		var target_y = global_position.y - 5000
 		rocketsfx.play()
 		var tween = create_tween()
 		tween.tween_property(self, "position:y", target_y, 2.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await tween.finished
+		linear_velocity = Vector2.ZERO
 		rocket_particle.emitting = false
+		trail_2d.visible = true
 		await get_tree().create_timer(0.55).timeout
 		launching_up = false
 		
@@ -60,17 +66,14 @@ func activate_shield():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.has_method("block") or body.has_method("wall")):
 		if (not launching_up):
-			
-			GameManager.camera_2d.apply_shake(2, 10)
+			pass
+			#GameManager.camera_2d.apply_shake(2, 10)
 		collidingsfx.play()
 
 
 func _on_kill_ball(killer: Variant) -> void:
 	if (launching_up):
 		pass
-		if (killer.has_method("spike")):
-			collidingsfx.play()
-			killer.queue_free()
 	elif (shieldIsActive && !killer.has_method("lava")):
 		shieldIsActive = false
 		shield.break_particle.emitting = true
@@ -86,6 +89,7 @@ func _on_kill_ball(killer: Variant) -> void:
 		area_2d.queue_free()
 		collision_shape_2d.queue_free()
 		vector_creator.queue_free()
+		trail_2d.visible = false
 		GameManager.camera_2d.apply_shake(50, 5.0)
 		await get_tree().create_timer(deadparticle.lifetime).timeout
 		queue_free()

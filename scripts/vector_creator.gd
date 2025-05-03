@@ -1,9 +1,9 @@
 extends Area2D
 signal vector_created(vector)
 @export var maximum_length := 200
-@onready var sprite_2d: Sprite2D = %Sprite2D
 @onready var arrow_sprite: Sprite2D = $arrow
-@onready var ball: RigidBody2D = $".."
+@onready var ball: RigidBody2D = $"../Ball"
+
 var lowpass = AudioServer.get_bus_effect(1, 0)
 var eq = AudioServer.get_bus_effect(1, 1)
 var tween: Tween
@@ -56,7 +56,9 @@ func _input(event: InputEvent) -> void:
 		var direction = vector.normalized()  
 		var vector_length = min(vector.length(), maximum_length)
 		#print(vector_length)
-		arrow_sprite.global_position = sprite_2d.global_position  + (direction * (min(200, vector_length / 10)))
+		#ball.rotation = target_rotation
+		ball.sprite_2d.rotation = target_rotation + 1.5
+		arrow_sprite.global_position = ball.global_position  + (direction * (min(200, vector_length / 10)))
 		arrow_sprite.scale.x = min((vector_length / 20000.0), 0.1) 
 		#print(arrow_sprite.scale.x)
 		lowpass.cutoff_hz = max(2000, lowpass.cutoff_hz - 500)

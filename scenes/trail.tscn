@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://coe2i74wvgctj"]
+
+[ext_resource type="Script" path="res://scripts/trail.gd" id="1_v4jol"]
+[ext_resource type="Texture2D" uid="uid://v1kedh7t1ya2" path="res://assets/circle-512.png" id="2_qxdqj"]
+[ext_resource type="Texture2D" uid="uid://mndih08mpfup" path="res://assets/glass.png" id="3_mj8yv"]
+
+[node name="trail" type="Line2D"]
+visible = false
+script = ExtResource("1_v4jol")
+MAX_LENGTH = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.07288e-06, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qxdqj")
+
+[node name="Glass" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(6.25849e-05, -140)
+scale = Vector2(0.264648, 0.274414)
+texture = ExtResource("3_mj8yv")

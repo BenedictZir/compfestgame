@@ -7,6 +7,8 @@
 size = Vector2(203, 199)
 
 [node name="mega_shield_pickup" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_4s3vt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
