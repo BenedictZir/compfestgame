@@ -8,29 +8,23 @@
 size = Vector2(134, 128)
 
 [node name="shooting_enemy" type="StaticBody2D"]
+collision_mask = 2
 script = ExtResource("1_r7oaq")
 bullets = ExtResource("2_3k1ip")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(67, -66)
 texture = ExtResource("3_1ac70")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(67, -66)
 collision_mask = 3
 
 [node name="bullet_cooldown" type="Timer" parent="."]
-wait_time = 1.2
-
-[node name="Label" type="Label" parent="."]
-offset_left = -57.0
-offset_top = -36.0
-offset_right = 115.0
-offset_bottom = 89.0
-theme_override_font_sizes/font_size = 40
-text = "turret
-"
+wait_time = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(68, -66)
 shape = SubResource("RectangleShape2D_3gkgp")
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]

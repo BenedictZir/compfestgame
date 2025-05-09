@@ -1,15 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://b88hvnnrngoo7"]
+[gd_scene load_steps=7 format=3 uid="uid://b88hvnnrngoo7"]
 
 [ext_resource type="Texture2D" uid="uid://8v68ssk13m05" path="res://assets/super_shield_border.png" id="1_6qal6"]
+[ext_resource type="Script" path="res://scripts/mega_shield.gd" id="1_56fxx"]
 [ext_resource type="Texture2D" uid="uid://b0db70w1rtcmk" path="res://assets/super_shield.png" id="2_sja36"]
 [ext_resource type="Texture2D" uid="uid://b62l32x0706f7" path="res://assets/startexture.png" id="3_be3a2"]
 
-[sub_resource type="Gradient" id="Gradient_1yqw7"]
-offsets = PackedFloat32Array(0, 0.153333, 0.313333, 0.46, 0.62, 0.78, 0.9)
+[sub_resource type="Gradient" id="Gradient_ddeo5"]
+offsets = PackedFloat32Array(0.14, 0.26, 0.373333, 0.5, 0.66, 0.813333, 0.94)
 colors = PackedColorArray(0.909804, 0.0784314, 0.0862745, 1, 1, 0.647059, 0, 1, 0.980392, 0.921569, 0.211765, 1, 0.47451, 0.764706, 0.0784314, 1, 0.282353, 0.490196, 0.905882, 1, 0.294118, 0.211765, 0.615686, 1, 0.439216, 0.211765, 0.615686, 1)
+
+[sub_resource type="Curve" id="Curve_xp7i8"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="mega_shield" type="Node2D"]
 visible = false
+script = ExtResource("1_56fxx")
 
 [node name="border" type="Sprite2D" parent="."]
 position = Vector2(4.57764e-07, -0.5)
@@ -24,14 +31,13 @@ texture = ExtResource("2_sja36")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 20)
-emitting = false
 amount = 15
-local_coords = true
 texture = ExtResource("3_be3a2")
 emission_shape = 2
 emission_sphere_radius = 45.0
 scale_amount_min = 0.05
 scale_amount_max = 0.05
-color_ramp = SubResource("Gradient_1yqw7")
+color_ramp = SubResource("Gradient_ddeo5")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_xp7i8")

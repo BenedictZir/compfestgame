@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2jkpbngcpd5o"]
+
+[ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="1_fltpc"]
+[ext_resource type="PackedScene" uid="uid://ba1gb01t3df4d" path="res://scenes/plus_chance.tscn" id="2_mhqpf"]
+
+[node name="obstacle_4" type="Node2D"]
+
+[node name="spike" parent="." instance=ExtResource("1_fltpc")]
+position = Vector2(-4, -4)
+
+[node name="spike2" parent="." instance=ExtResource("1_fltpc")]
+position = Vector2(189, -3)
+
+[node name="spike3" parent="." instance=ExtResource("1_fltpc")]
+position = Vector2(892, 0)
+
+[node name="spike4" parent="." instance=ExtResource("1_fltpc")]
+position = Vector2(700, 0)
+
+[node name="plus_chance" parent="." instance=ExtResource("2_mhqpf")]
+position = Vector2(444, -1)

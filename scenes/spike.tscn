@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="4_wh58s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m30fk"]
-radius = 81.0015
+radius = 88.0057
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dr64"]
 radius = 81.0062
@@ -16,19 +16,19 @@ collision_mask = 2
 script = ExtResource("1_1hi71")
 
 [node name="killzone" type="Area2D" parent="."]
+position = Vector2(103, -100)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(104, 101.5)
 shape = SubResource("CircleShape2D_m30fk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(104, 102)
-scale = Vector2(0.478333, 0.490625)
+position = Vector2(100, -100)
+scale = Vector2(0.478, 0.478)
 texture = ExtResource("1_y6j3p")
 
 [node name="deadparticle" parent="." instance=ExtResource("3_s88ly")]
-position = Vector2(511, -205)
+position = Vector2(529.4, -338)
 amount = 15
 speed_scale = 3.0
 initial_velocity_min = 400.0
@@ -38,12 +38,13 @@ scale_amount_max = 45.0
 color = Color(1, 1, 1, 1)
 
 [node name="deadsfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(107, -98)
 stream = ExtResource("4_wh58s")
 volume_db = 2.0
 max_distance = 100000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(104, 101)
+position = Vector2(103, -100)
 shape = SubResource("CircleShape2D_5dr64")
 
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]

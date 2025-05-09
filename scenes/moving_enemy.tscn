@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://doy1db8ily5kp"]
+[gd_scene load_steps=5 format=3 uid="uid://doy1db8ily5kp"]
 
-[node name="moving_enemy" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://cwl1mob5lk3on" path="res://icon.svg" id="1_ierd8"]
+[ext_resource type="Script" path="res://scripts/moving_enemy.gd" id="1_l0yl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olpyk"]
+size = Vector2(194, 195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdtic"]
+size = Vector2(97, 96)
+
+[node name="moving_enemy" type="StaticBody2D"]
+position = Vector2(-1, 3)
+collision_mask = 2
+script = ExtResource("1_l0yl8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50.5, -53.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_olpyk")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(50.5, -53.5)
+scale = Vector2(0.757813, 0.757813)
+texture = ExtResource("1_ierd8")
+
+[node name="RayCastright" type="RayCast2D" parent="."]
+position = Vector2(50.5, -53.5)
+scale = Vector2(0.5, 0.5)
+target_position = Vector2(109, 2)
+
+[node name="RayCastleft" type="RayCast2D" parent="."]
+position = Vector2(50.5, -53.5)
+scale = Vector2(0.5, 0.5)
+target_position = Vector2(-108, 0)
+
+[node name="killzone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(50.5, -54)
+shape = SubResource("RectangleShape2D_hdtic")
+
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]

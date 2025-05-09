@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://jdkc6b20lb87"]
+[gd_scene load_steps=34 format=3 uid="uid://jdkc6b20lb87"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_fejfp"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_tokcd"]
@@ -7,24 +7,31 @@
 [ext_resource type="Texture2D" uid="uid://b0db70w1rtcmk" path="res://assets/super_shield.png" id="4_3uiro"]
 [ext_resource type="PackedScene" uid="uid://ba1gb01t3df4d" path="res://scenes/plus_chance.tscn" id="5_lt0g4"]
 [ext_resource type="PackedScene" uid="uid://dcug6wc6tslke" path="res://scenes/launch_up_block.tscn" id="6_4dghr"]
+[ext_resource type="Texture2D" uid="uid://dkosjt0nre2un" path="res://assets/rainbow_infinity.png" id="6_mlugq"]
+[ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="7_1l16t"]
 [ext_resource type="PackedScene" uid="uid://bb6enm8s770lh" path="res://scenes/normal_block.tscn" id="7_1mrfi"]
+[ext_resource type="PackedScene" uid="uid://dy2k63i1sdbdh" path="res://scenes/shield_pickup.tscn" id="7_xo5u8"]
+[ext_resource type="PackedScene" uid="uid://c1rk8r5sauvpy" path="res://scenes/obstacle_1.tscn" id="8_uacss"]
 [ext_resource type="AudioStream" uid="uid://kf6xdbnnneh" path="res://assets/sfx/cyborg-ninja-kevin-macleod-main-version-7993-03-00.mp3" id="9_c3exs"]
 [ext_resource type="Script" path="res://scripts/walls.gd" id="10_63vom"]
 [ext_resource type="AudioStream" uid="uid://d08gagf5p6afx" path="res://assets/sfx/spawn2.wav" id="10_b1esk"]
 [ext_resource type="PackedScene" uid="uid://rir7n03ft86r" path="res://scenes/wall.tscn" id="10_dl6qq"]
+[ext_resource type="PackedScene" uid="uid://pwjgaa4851v2" path="res://scenes/obstacle_3.tscn" id="10_qd0wn"]
 [ext_resource type="PackedScene" uid="uid://6lj63tmfybdm" path="res://scenes/lava.tscn" id="12_di1i5"]
 [ext_resource type="PackedScene" uid="uid://pypugkookp5r" path="res://scenes/two_block.tscn" id="13_lkrq7"]
 [ext_resource type="PackedScene" uid="uid://d3p67idhsxsv2" path="res://scenes/l_block.tscn" id="14_6pyou"]
-[ext_resource type="PackedScene" uid="uid://c1rk8r5sauvpy" path="res://scenes/obstacle_1.tscn" id="15_4nj21"]
-[ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="15_e5ba6"]
-[ext_resource type="PackedScene" uid="uid://dy2k63i1sdbdh" path="res://scenes/shield_pickup.tscn" id="16_kicji"]
+[ext_resource type="PackedScene" uid="uid://c2jkpbngcpd5o" path="res://scenes/obstacle_4.tscn" id="15_fejm5"]
 [ext_resource type="PackedScene" uid="uid://b3o6vw1767a4x" path="res://scenes/obstacle_2.tscn" id="17_v2i3c"]
+[ext_resource type="PackedScene" uid="uid://dgudd7v8a021n" path="res://scenes/obstacle_5.tscn" id="18_b3k8d"]
 [ext_resource type="PackedScene" uid="uid://dk18xwarpanol" path="res://scenes/starting_paltform.tscn" id="18_sii23"]
+[ext_resource type="PackedScene" uid="uid://dklihi5fm6yln" path="res://scenes/obstacle_6.tscn" id="19_5ii5t"]
 [ext_resource type="PackedScene" uid="uid://c06j74v744n22" path="res://scenes/bonus_score.tscn" id="19_htfkk"]
+[ext_resource type="PackedScene" uid="uid://nr61i44mikft" path="res://scenes/obstacle_7.tscn" id="20_6kyu2"]
 [ext_resource type="PackedScene" uid="uid://ca1dpjaktx0ev" path="res://scenes/minus_chance.tscn" id="20_7n50l"]
 [ext_resource type="PackedScene" uid="uid://bht418dpb8ydu" path="res://scenes/mega_shield_pickup.tscn" id="21_bpjyb"]
 [ext_resource type="PackedScene" uid="uid://cox5k235n2mcg" path="res://scenes/VectorCreator.tscn" id="22_x5wje"]
 [ext_resource type="PackedScene" uid="uid://catbnn8t5co5u" path="res://scenes/shooting_enemy.tscn" id="25_q7q0y"]
+[ext_resource type="PackedScene" uid="uid://doy1db8ily5kp" path="res://scenes/moving_enemy.tscn" id="26_cyfye"]
 
 [sub_resource type="Environment" id="Environment_ynl1j"]
 background_mode = 3
@@ -40,9 +47,29 @@ glow_strength = 1.3
 glow_blend_mode = 1
 glow_hdr_scale = 3.68
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("spawn_container")]
 position = Vector2(-578, 375)
 script = ExtResource("1_fejfp")
+spawn_container = NodePath("spawn_container")
+bonus_score_scene = ExtResource("19_htfkk")
+launch_up_block_scene = ExtResource("6_4dghr")
+mega_shield_pickup_scene = ExtResource("21_bpjyb")
+minus_chance_scene = ExtResource("20_7n50l")
+plus_chance_scene = ExtResource("5_lt0g4")
+shield_pickup_scene = ExtResource("7_xo5u8")
+spike_scene = ExtResource("7_1l16t")
+two_block_scene = ExtResource("13_lkrq7")
+obstacle1_scene = ExtResource("8_uacss")
+obstacle2_scene = ExtResource("17_v2i3c")
+obstacle3_scene = ExtResource("10_qd0wn")
+l_block_scene = ExtResource("14_6pyou")
+block_scene = ExtResource("7_1mrfi")
+obstacle4_scene = ExtResource("15_fejm5")
+moving_enemy_scene = ExtResource("26_cyfye")
+shooting_enemy_scene = ExtResource("25_q7q0y")
+obstacle5_scene = ExtResource("18_b3k8d")
+obstacle6_scene = ExtResource("19_5ii5t")
+obstacle7_scene = ExtResource("20_6kyu2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(580, -252)
@@ -50,18 +77,9 @@ zoom = Vector2(1, 0.5)
 limit_bottom = 500
 script = ExtResource("2_tokcd")
 
-[node name="plus_chance" parent="." instance=ExtResource("5_lt0g4")]
-position = Vector2(426, -1274)
-
-[node name="plus_chance2" parent="." instance=ExtResource("5_lt0g4")]
-position = Vector2(924, -961)
-
-[node name="plus_chance3" parent="." instance=ExtResource("5_lt0g4")]
-position = Vector2(859, -1427)
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer2"]
+[node name="score_chance" type="Label" parent="CanvasLayer2"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -77,7 +95,8 @@ theme_override_constants/shadow_offset_x = 10
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("4_3nlel")
 theme_override_font_sizes/font_size = 80
-text = "test"
+text = "chance : "
+metadata/_edit_use_anchors_ = true
 
 [node name="mega_buff_indicator" type="Sprite2D" parent="CanvasLayer2"]
 self_modulate = Color(1, 1, 1, 0.392157)
@@ -97,8 +116,32 @@ position = Vector2(996.2, 53.2)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_3uiro")
 
-[node name="launch_up_block" parent="." instance=ExtResource("6_4dghr")]
-position = Vector2(326, -1696)
+[node name="mega_buff" type="Label" parent="CanvasLayer2"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 1202.0
+offset_right = -5.0
+offset_bottom = 1202.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_3nlel")
+theme_override_font_sizes/font_size = 100
+text = "press space"
+horizontal_alignment = 1
+
+[node name="rainbow_inf" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+position = Vector2(539, 53)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_mlugq")
 
 [node name="Ball" parent="." instance=ExtResource("2_xxkmy")]
 position = Vector2(584, -449)
@@ -119,32 +162,10 @@ max_distance = 1e+06
 bus = &"bgmusic"
 parameters/looping = true
 
-[node name="normal_block" parent="." instance=ExtResource("7_1mrfi")]
-position = Vector2(901, -1823)
-
-[node name="two_block" parent="." instance=ExtResource("13_lkrq7")]
-position = Vector2(43, -3070)
-
-[node name="L_block" parent="." instance=ExtResource("14_6pyou")]
-position = Vector2(715, -3030)
-
-[node name="spike" parent="." instance=ExtResource("15_e5ba6")]
-position = Vector2(251, -2656)
-
-[node name="spike2" parent="." instance=ExtResource("15_e5ba6")]
-position = Vector2(499, -1698)
-
-[node name="obstacle1" parent="." instance=ExtResource("15_4nj21")]
-position = Vector2(31, -2435)
-
-[node name="shield_pickup" parent="." instance=ExtResource("16_kicji")]
-position = Vector2(191, -1048)
-
-[node name="obstacle2" parent="." instance=ExtResource("17_v2i3c")]
-position = Vector2(706, -3740)
-
 [node name="starting_paltform" parent="." instance=ExtResource("18_sii23")]
 position = Vector2(581, -234)
+
+[node name="spawn_container" type="Node2D" parent="."]
 
 [node name="lava" parent="." instance=ExtResource("12_di1i5")]
 z_index = 1
@@ -160,21 +181,6 @@ position = Vector2(-153, 242)
 [node name="wall2" parent="walls" instance=ExtResource("10_dl6qq")]
 position = Vector2(1046, 242)
 
-[node name="bonus_score" parent="." instance=ExtResource("19_htfkk")]
-position = Vector2(679, -1102)
-
-[node name="minus_chance" parent="." instance=ExtResource("20_7n50l")]
-position = Vector2(422, -831)
-
-[node name="mega_shield_pickup" parent="." instance=ExtResource("21_bpjyb")]
-position = Vector2(296, -1985)
-
-[node name="mega_shield_pickup2" parent="." instance=ExtResource("21_bpjyb")]
-position = Vector2(776, -2052)
-
 [node name="VectorCreator" parent="." instance=ExtResource("22_x5wje")]
-
-[node name="shooting_enemy" parent="." instance=ExtResource("25_q7q0y")]
-position = Vector2(780, -2554)
 
 [connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]

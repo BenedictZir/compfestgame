@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	GameManager.chancetothrow -= 1
+	if (GameManager.chancetothrow != 0):
+		GameManager.chancetothrow -= 1
 	queue_free()

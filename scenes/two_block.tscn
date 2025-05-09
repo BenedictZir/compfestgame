@@ -5,7 +5,7 @@
 [node name="two_block" type="Node2D"]
 
 [node name="normal_block" parent="." instance=ExtResource("1_pusln")]
-position = Vector2(105, 99)
+position = Vector2(0, 4)
 
 [node name="normal_block2" parent="." instance=ExtResource("1_pusln")]
-position = Vector2(301, 99)
+position = Vector2(197, 4)

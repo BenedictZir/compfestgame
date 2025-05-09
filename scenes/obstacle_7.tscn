@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://nr61i44mikft"]
+
+[ext_resource type="PackedScene" uid="uid://bht418dpb8ydu" path="res://scenes/mega_shield_pickup.tscn" id="1_6mt6f"]
+[ext_resource type="PackedScene" uid="uid://bb6enm8s770lh" path="res://scenes/normal_block.tscn" id="2_jxr1b"]
+[ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="3_ukep1"]
+
+[node name="obstacle_7" type="Node2D"]
+
+[node name="mega_shield_pickup" parent="." instance=ExtResource("1_6mt6f")]
+position = Vector2(809, -2)
+
+[node name="normal_block" parent="." instance=ExtResource("2_jxr1b")]
+position = Vector2(813, -202)
+
+[node name="spike" parent="." instance=ExtResource("3_ukep1")]
+position = Vector2(611, -208)

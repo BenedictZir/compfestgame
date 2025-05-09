@@ -7,4 +7,4 @@
 [node name="two_block" parent="." instance=ExtResource("1_tbkbt")]
 
 [node name="two_block2" parent="." instance=ExtResource("1_tbkbt")]
-position = Vector2(679, 0)
+position = Vector2(632, 0)

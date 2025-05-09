@@ -10,7 +10,7 @@ radius = 2192.97
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_kqtjy")
-maximum_length = 2000
+maximum_length = 3000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(572.75, 322)

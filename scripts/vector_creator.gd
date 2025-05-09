@@ -39,7 +39,7 @@ func _input(event: InputEvent) -> void:
 		bass = 0
 		eq.set_band_gain_db(0, bass)
 		eq.set_band_gain_db(1, bass)
-		var tween = create_tween()
+		#tween = create_tween()
 		touch_down = false
 		emit_signal("vector_created", vector)
 		arrow_sprite.visible = false

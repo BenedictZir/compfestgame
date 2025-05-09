@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxfeww2g5iqn2"
-path="res://.godot/imported/ChatGPT Image May 1, 2025, 01_17_21 AM.png-6c75c944b2cee2ba3e9b6ad8c3640064.ctex"
+uid="uid://dkosjt0nre2un"
+path="res://.godot/imported/rainbow_infinity.png-415c57ecda8206210b37ad103fa9c365.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ChatGPT Image May 1, 2025, 01_17_21 AM.png"
-dest_files=["res://.godot/imported/ChatGPT Image May 1, 2025, 01_17_21 AM.png-6c75c944b2cee2ba3e9b6ad8c3640064.ctex"]
+source_file="res://assets/rainbow_infinity.png"
+dest_files=["res://.godot/imported/rainbow_infinity.png-415c57ecda8206210b37ad103fa9c365.ctex"]
 
 [params]
 

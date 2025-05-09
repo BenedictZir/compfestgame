@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgudd7v8a021n"]
+
+[ext_resource type="PackedScene" uid="uid://d3p67idhsxsv2" path="res://scenes/l_block.tscn" id="1_x5htn"]
+[ext_resource type="PackedScene" uid="uid://doy1db8ily5kp" path="res://scenes/moving_enemy.tscn" id="2_rv410"]
+[ext_resource type="PackedScene" uid="uid://dcug6wc6tslke" path="res://scenes/launch_up_block.tscn" id="3_uo6pd"]
+
+[node name="obstacle_5" instance=ExtResource("1_x5htn")]
+
+[node name="two_block" parent="." index="0"]
+position = Vector2(-2, -1)
+
+[node name="normal_block" parent="." index="1"]
+position = Vector2(195, -191)
+
+[node name="moving_enemy" parent="." index="2" instance=ExtResource("2_rv410")]
+position = Vector2(422, -52)
+
+[node name="launch_up_block" parent="." index="3" instance=ExtResource("3_uo6pd")]
+position = Vector2(781, -193)

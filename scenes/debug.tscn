@@ -11,14 +11,8 @@
 [node name="DEBUG" type="Node2D"]
 script = ExtResource("1_3up2t")
 
-[node name="shooting_enemy" parent="." instance=ExtResource("1_7j7ha")]
-position = Vector2(258, 105)
-
 [node name="Ball" parent="." instance=ExtResource("3_drlch")]
 position = Vector2(483, 673)
-
-[node name="normal_block" parent="." instance=ExtResource("2_ytuft")]
-position = Vector2(488, 1046)
 
 [node name="normal_block2" parent="." instance=ExtResource("2_ytuft")]
 position = Vector2(954, 147)
@@ -29,3 +23,8 @@ position = Vector2(371, 295)
 [node name="VectorCreator" parent="." instance=ExtResource("4_ftdy0")]
 
 [node name="trail" parent="." instance=ExtResource("6_icp1d")]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="shooting_enemy" parent="Node" instance=ExtResource("1_7j7ha")]
+position = Vector2(112, 584)
