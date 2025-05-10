@@ -14,6 +14,7 @@ extends RigidBody2D
 @onready var shield: Node2D = $shield
 @onready var mega_shield: Node2D = $mega_shield
 @onready var mega_buff_duration: Timer = $mega_buff_duration
+@onready var launchparticle: CPUParticles2D = $launchparticle
 
 @export var normal_trail_gradient: Gradient
 @export var rainbow_trail_gradient: Gradient
@@ -41,6 +42,9 @@ func launch(force: Vector2) -> void:
 			GameManager.chancetothrow -= 1
 		linear_velocity = Vector2.ZERO
 		apply_impulse(force * 1.2)
+		if (launchparticle.emitting == true):
+			launchparticle.restart()
+		launchparticle.emitting = true
 		throwsfx.play()
 
 func launch_up():

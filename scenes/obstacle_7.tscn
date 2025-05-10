@@ -10,7 +10,7 @@
 position = Vector2(809, -2)
 
 [node name="normal_block" parent="." instance=ExtResource("2_jxr1b")]
-position = Vector2(813, -202)
+position = Vector2(601, -210)
 
 [node name="spike" parent="." instance=ExtResource("3_ukep1")]
-position = Vector2(611, -208)
+position = Vector2(816, -217)

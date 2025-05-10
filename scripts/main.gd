@@ -30,6 +30,8 @@ extends Node2D
 @export var obstacle5_scene: PackedScene
 @export var obstacle6_scene: PackedScene
 @export var obstacle7_scene: PackedScene
+@export var obstacle8_scene: PackedScene
+@export var obstacle9_scene: PackedScene
 var last_picked
 var spike_types = []
 
@@ -64,7 +66,9 @@ func _ready() -> void:
 		block_scene,
 		two_block_scene,
 		obstacle6_scene,
-		obstacle7_scene
+		obstacle7_scene,
+		obstacle8_scene,
+		obstacle9_scene
 	]
 	enemy_types = [
 		moving_enemy_scene,
@@ -81,6 +85,7 @@ func _ready() -> void:
 		shield_pickup_scene
 	]
 	debuff_types = [
+		block_scene,
 		minus_chance_scene
 	]
 	mega_buff_types = [mega_shield_pickup_scene]
@@ -222,9 +227,13 @@ func generate_objects_in_area():
 
 			x2 = randf_range(70, 900)
 			var try = 0
-			while(abs(x2 - x1) < 400 and try <= 10):
+			while(abs(x2 - x1) < 400 and try <= 100):
 				try += 1
 				x2 = randf_range(70, 900)
+			if (try >= 100):
+				x2 = x1 + 300
+				if (x2 > 900):
+					x2 = x1 - 300
 			var y = last_generated_y
 			obj.global_position = Vector2(x2, y)
 			spawn_container.add_child(obj)

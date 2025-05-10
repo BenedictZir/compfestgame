@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://jdkc6b20lb87"]
+[gd_scene load_steps=36 format=3 uid="uid://jdkc6b20lb87"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_fejfp"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_tokcd"]
@@ -28,7 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://c06j74v744n22" path="res://scenes/bonus_score.tscn" id="19_htfkk"]
 [ext_resource type="PackedScene" uid="uid://nr61i44mikft" path="res://scenes/obstacle_7.tscn" id="20_6kyu2"]
 [ext_resource type="PackedScene" uid="uid://ca1dpjaktx0ev" path="res://scenes/minus_chance.tscn" id="20_7n50l"]
+[ext_resource type="PackedScene" uid="uid://cry07n736bbwk" path="res://scenes/obstacle_8.tscn" id="21_203ps"]
 [ext_resource type="PackedScene" uid="uid://bht418dpb8ydu" path="res://scenes/mega_shield_pickup.tscn" id="21_bpjyb"]
+[ext_resource type="PackedScene" uid="uid://dwqu387uxukl6" path="res://scenes/obstacle_9.tscn" id="22_bcjvk"]
 [ext_resource type="PackedScene" uid="uid://cox5k235n2mcg" path="res://scenes/VectorCreator.tscn" id="22_x5wje"]
 [ext_resource type="PackedScene" uid="uid://catbnn8t5co5u" path="res://scenes/shooting_enemy.tscn" id="25_q7q0y"]
 [ext_resource type="PackedScene" uid="uid://doy1db8ily5kp" path="res://scenes/moving_enemy.tscn" id="26_cyfye"]
@@ -70,6 +72,8 @@ shooting_enemy_scene = ExtResource("25_q7q0y")
 obstacle5_scene = ExtResource("18_b3k8d")
 obstacle6_scene = ExtResource("19_5ii5t")
 obstacle7_scene = ExtResource("20_6kyu2")
+obstacle8_scene = ExtResource("21_203ps")
+obstacle9_scene = ExtResource("22_bcjvk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(580, -252)

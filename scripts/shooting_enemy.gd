@@ -3,6 +3,9 @@ extends StaticBody2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var bullet_cooldown: Timer = $bullet_cooldown
 @export var bullets : PackedScene
+@onready var shootsfx: AudioStreamPlayer2D = $shootsfx
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 
 var ball
 
@@ -11,6 +14,7 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if (GameManager.gameStarted):
+		sprite_2d.rotation = ray_cast_2d.target_position.angle() + 1.5
 		_aim()
 		_check_player_collision()
 	
@@ -41,9 +45,11 @@ func _shoot():
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			var bullet = bullets.instantiate()
-			bullet.position = position
 			bullet.direction = (ray_cast_2d.target_position).normalized()
+			bullet.position = position + (bullet.direction * Vector2(80, 80)) + sprite_2d.position
+			#print(bullet.position)
 			get_tree().current_scene.add_child(bullet)
+			shootsfx.play()
 
 func block():
 	pass

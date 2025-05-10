@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4s43pl6oq6ij"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_i0jmj"]
+[ext_resource type="FontFile" uid="uid://bnj6dt3eod46e" path="res://assets/wheaton capitals.otf" id="2_4m00c"]
+[ext_resource type="AudioStream" uid="uid://c82pwt0qkm5c" path="res://assets/sfx/2016_ Clement Panchout_ Life is full of Joy.wav" id="2_ulp8y"]
+[ext_resource type="AudioStream" uid="uid://dhg2xcvuy71bj" path="res://assets/sfx/bwot.wav" id="4_iriuf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_308hy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibfyy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhwd3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydmvv"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0jmj")
+tween_intensity = 1.2
+tween_duration = 0.3
+
+[node name="start_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -78.0
+offset_right = 288.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
+theme_override_fonts/font = ExtResource("2_4m00c")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
+text = "START"
+
+[node name="options_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.627
+anchor_right = 0.5
+anchor_bottom = 0.627
+offset_left = -294.0
+offset_top = -78.2001
+offset_right = 288.0
+offset_bottom = 77.7999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
+theme_override_fonts/font = ExtResource("2_4m00c")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
+text = "OPTIONS"
+
+[node name="exit_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.759
+anchor_right = 0.5
+anchor_bottom = 0.759
+offset_left = -294.0
+offset_top = -78.4001
+offset_right = 288.0
+offset_bottom = 77.5999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
+theme_override_fonts/font = ExtResource("2_4m00c")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
+text = "EXIT"
+
+[node name="menu_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ulp8y")
+autoplay = true
+max_distance = 2e+06
+
+[node name="button_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_iriuf")
+max_distance = 999999.0
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="finished" from="menu_music" to="." method="_on_menu_music_finished"]

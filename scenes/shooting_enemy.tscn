@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://catbnn8t5co5u"]
+[gd_scene load_steps=7 format=3 uid="uid://catbnn8t5co5u"]
 
 [ext_resource type="Script" path="res://scripts/shooting_enemy.gd" id="1_r7oaq"]
 [ext_resource type="PackedScene" uid="uid://c7xnx5kr4x8ao" path="res://scenes/bullet.tscn" id="2_3k1ip"]
 [ext_resource type="Texture2D" uid="uid://cwl1mob5lk3on" path="res://icon.svg" id="3_1ac70"]
+[ext_resource type="AudioStream" uid="uid://dmgebnn1e1qu5" path="res://assets/sfx/error.wav" id="4_s3on8"]
+[ext_resource type="Texture2D" uid="uid://c18wli6m31j7o" path="res://assets/60fe968c3d624000048712a0.png" id="4_wf5qo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gkgp"]
 size = Vector2(134, 128)
@@ -16,6 +18,12 @@ bullets = ExtResource("2_3k1ip")
 position = Vector2(67, -66)
 texture = ExtResource("3_1ac70")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(1, -40)
+rotation = -1.57079
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("4_wf5qo")
+
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(67, -66)
 collision_mask = 3
@@ -26,5 +34,9 @@ wait_time = 0.9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(68, -66)
 shape = SubResource("RectangleShape2D_3gkgp")
+
+[node name="shootsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s3on8")
+max_distance = 4000.0
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]

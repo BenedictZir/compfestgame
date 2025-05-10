@@ -15,7 +15,7 @@ script = ExtResource("1_3up2t")
 position = Vector2(483, 673)
 
 [node name="normal_block2" parent="." instance=ExtResource("2_ytuft")]
-position = Vector2(954, 147)
+position = Vector2(407, 1006)
 
 [node name="spike" parent="." instance=ExtResource("5_4bjty")]
 position = Vector2(371, 295)

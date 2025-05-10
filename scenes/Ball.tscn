@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnnaw48i71s22"]
+[gd_scene load_steps=21 format=3 uid="uid://cnnaw48i71s22"]
 
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="1_1ksm1"]
 [ext_resource type="Texture2D" uid="uid://v1kedh7t1ya2" path="res://assets/circle-512.png" id="1_lm1xb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c18wli6m31j7o" path="res://assets/60fe968c3d624000048712a0.png" id="6_il480"]
 [ext_resource type="AudioStream" uid="uid://bo0dluxj2dkn2" path="res://assets/sfx/tuuuit.wav" id="6_yg3jg"]
 [ext_resource type="AudioStream" uid="uid://dmgebnn1e1qu5" path="res://assets/sfx/error.wav" id="7_i5col"]
+[ext_resource type="PackedScene" uid="uid://db0voyedf7bnh" path="res://scenes/cloudparticle.tscn" id="7_mw4xy"]
 [ext_resource type="AudioStream" uid="uid://b2ctgkfya0nam" path="res://assets/sfx/hitHurt.wav" id="8_3lplf"]
 [ext_resource type="PackedScene" uid="uid://cpo4uc7e0ss8s" path="res://scenes/shield.tscn" id="9_133u7"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="10_ccndw"]
@@ -136,6 +137,15 @@ length = 20
 
 [node name="mega_buff_duration" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="launchparticle" parent="." instance=ExtResource("7_mw4xy")]
+position = Vector2(0, 44)
+scale = Vector2(0.2, 0.2)
+speed_scale = 1.6
+initial_velocity_min = 500.0
+initial_velocity_max = 600.0
+scale_amount_min = 0.08
+scale_amount_max = 0.08
 
 [connection signal="activate_mega_shield" from="." to="." method="_on_activate_mega_shield"]
 [connection signal="kill_ball" from="." to="." method="_on_kill_ball"]

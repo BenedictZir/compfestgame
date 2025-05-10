@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cry07n736bbwk"]
+
+[ext_resource type="PackedScene" uid="uid://bb6enm8s770lh" path="res://scenes/normal_block.tscn" id="1_8pit1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="normal_block" parent="." instance=ExtResource("1_8pit1")]
+position = Vector2(-2, 3)
+
+[node name="normal_block2" parent="." instance=ExtResource("1_8pit1")]
+position = Vector2(821, 3)
