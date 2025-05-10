@@ -5,7 +5,7 @@ extends Node2D
 @onready var deadparticle: CPUParticles2D = $deadparticle
 @onready var floatingparticle: CPUParticles2D = $floatingparticle
 @onready var floatingparticle_2: CPUParticles2D = $floatingparticle2
-
+var stopMoving = false
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -14,6 +14,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (!GameManager.gameStarted):
 		return
+	if (GameManager.gameLost):
+		stopMoving = true
+	if (stopMoving):
+		return
+	
 	position.y -= speed * delta
 	speed = min(speed + acceleration, 1000)
 	#print(speed)

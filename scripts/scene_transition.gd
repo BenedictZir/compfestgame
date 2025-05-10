@@ -17,11 +17,11 @@ func transition(color = "000000") -> void:
 	await animation_player.animation_finished
 	animation_player.play_backwards("dissolve")
 
-func reload(target, color = "000000") -> void:
-	dissolve_rect.color = color
-	animation_player.play("dissolve")
-	await animation_player.animation_finished
-	get_tree().change_scene_to_file(target)
-	get_tree().reload_current_scene()
-	animation_player.play_backwards()
+#func reload(target, color = "000000") -> void:
+	#dissolve_rect.color = color
+	#animation_player.play("dissolve")
+	#await animation_player.animation_finished
+	#get_tree().change_scene_to_file(target)
+	#get_tree().reload_current_scene()
+	#animation_player.play_backwards()
 	

@@ -1,0 +1,347 @@
+[gd_scene load_steps=18 format=3 uid="uid://cpjqffkdtfj30"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ahh6o"]
+[ext_resource type="FontFile" uid="uid://bnj6dt3eod46e" path="res://assets/wheaton capitals.otf" id="2_c5xyi"]
+[ext_resource type="Texture2D" uid="uid://bainvtvuunam3" path="res://assets/PixelGUI/PixelGUI/ExitIcon.png" id="3_cpqve"]
+[ext_resource type="Texture2D" uid="uid://cogk53gkoyr6b" path="res://assets/PixelGUI/PixelGUI/ExitIconClick.png" id="4_0kesg"]
+[ext_resource type="Texture2D" uid="uid://76moy4db61yb" path="res://assets/PixelGUI/PixelGUI/PlayIconClick.png" id="5_a5k7n"]
+[ext_resource type="Texture2D" uid="uid://dhyep57c6lbav" path="res://assets/PixelGUI/PixelGUI/ClickIcon.png" id="6_8bvgy"]
+[ext_resource type="AudioStream" uid="uid://dhg2xcvuy71bj" path="res://assets/sfx/bwot.wav" id="7_e407o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ve5q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6qar"]
+texture = ExtResource("3_cpqve")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0aa3"]
+texture = ExtResource("4_0kesg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1aqs"]
+texture = ExtResource("3_cpqve")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i5cs3"]
+texture = ExtResource("5_a5k7n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlf6x"]
+texture = ExtResource("6_8bvgy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udpq0"]
+texture = ExtResource("6_8bvgy")
+
+[sub_resource type="Animation" id="Animation_4nsc4"]
+resource_name = "game_over"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gameoverlabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("scorelabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("score:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("score:theme_override_font_sizes/font_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [80, 80, 200]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:shake")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_dgnpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gameoverlabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("scorelabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("score:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("score:theme_override_font_sizes/font_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:shake")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_24qn3"]
+_data = {
+"RESET": SubResource("Animation_dgnpf"),
+"game_over": SubResource("Animation_4nsc4")
+}
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -6.0
+offset_right = -3.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ahh6o")
+tween_intensity = 1.2
+tween_duration = 0.3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.0383972, 0.0383972, 0.0383972, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.5
+offset_top = -658.5
+offset_right = 417.5
+offset_bottom = 658.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameoverlabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.107
+anchor_top = 0.088
+anchor_right = 0.882
+anchor_bottom = 0.911125
+offset_left = 0.440002
+offset_top = 116.2
+offset_right = 0.439941
+offset_bottom = 0.199951
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("2_c5xyi")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER
+"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="retrylabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109778
+anchor_top = 0.015875
+anchor_right = 0.885111
+anchor_bottom = 0.819875
+offset_left = 0.440002
+offset_top = 894.6
+offset_right = 0.0799561
+offset_bottom = 809.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0977054, 0.647484, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("2_c5xyi")
+theme_override_font_sizes/font_size = 100
+text = "RETRY?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="exit_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.762
+anchor_right = 0.312
+anchor_bottom = 0.762
+offset_left = -115.96
+offset_top = -94.2001
+offset_right = 117.04
+offset_bottom = 92.7999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
+theme_override_fonts/font = ExtResource("2_c5xyi")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ve5q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h6qar")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c0aa3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_e1aqs")
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.762
+anchor_right = 0.312
+anchor_bottom = 0.762
+offset_left = 295.04
+offset_top = -94.2001
+offset_right = 528.04
+offset_bottom = 92.7999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
+theme_override_fonts/font = ExtResource("2_c5xyi")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ve5q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i5cs3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qlf6x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_udpq0")
+
+[node name="button_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_e407o")
+max_distance = 999999.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_24qn3")
+}
+
+[node name="scorelabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.114407
+anchor_top = 0.214875
+anchor_right = 0.889407
+anchor_bottom = 1.038
+offset_left = 0.440002
+offset_top = 116.2
+offset_right = 0.439941
+offset_bottom = 0.199951
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("2_c5xyi")
+theme_override_font_sizes/font_size = 100
+text = "score:"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.116259
+anchor_top = 0.01675
+anchor_right = 0.891259
+anchor_bottom = 0.839875
+offset_left = 0.440002
+offset_top = 116.2
+offset_right = 0.439941
+offset_bottom = 0.199951
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_fonts/font = ExtResource("2_c5xyi")
+theme_override_font_sizes/font_size = 120
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="game_over" from="." to="." method="_on_game_over"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]

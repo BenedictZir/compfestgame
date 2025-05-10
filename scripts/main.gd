@@ -10,6 +10,9 @@ extends Node2D
 @onready var mega_buff_indicator_3: Sprite2D = $CanvasLayer2/mega_buff_indicator3
 @onready var mega_buff_label: Label = $CanvasLayer2/mega_buff
 @onready var rainbow_inf: Sprite2D = $CanvasLayer2/rainbow_inf
+@onready var game_over: Control = $CanvasLayer2/game_over
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @export var spawn_container: Node2D
 @export var bonus_score_scene: PackedScene
 @export var launch_up_block_scene: PackedScene
@@ -32,6 +35,8 @@ extends Node2D
 @export var obstacle7_scene: PackedScene
 @export var obstacle8_scene: PackedScene
 @export var obstacle9_scene: PackedScene
+@export var starting_platform: PackedScene 
+#582 234
 var last_picked
 var spike_types = []
 
@@ -43,14 +48,18 @@ var mega_buff_types = []
 const SPAWN_INTERVAL_Y := 1000  
 const OBJECTS_PER_BATCH := 8  
 var last_generated_y := -2000
-
+var gameOverShown := false
 var ball_y_position
 var highest_y : float
 var starting_y : float
-var score : int
 @onready var lava: Node2D = $lava
 
 func _ready() -> void:
+	GameManager.chancetothrow = 10
+	GameManager.bonus_score = 0
+	GameManager.score = 0
+	gameOverShown = false
+	GameManager.gameLost = false
 	spike_types = [
 		spike_scene
 		#block_scene,
@@ -97,6 +106,14 @@ func _ready() -> void:
 	spawnsfx.play()
 	bgmusic.play()
 func _process(delta: float) -> void:
+
+	if GameManager.gameLost and !gameOverShown:
+		GameManager.gameStarted = false
+		gameOverShown = true
+		label.visible = false
+		animation_player.play("game_over")
+		await animation_player.animation_finished
+		game_over.emit_signal("game_over")
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			ball_y_position = ball.position.y
@@ -106,7 +123,7 @@ func _process(delta: float) -> void:
 		if (!ball.died):
 			vector_creator.position = ball.position
 	if (GameManager.camera_2d.position.y < highest_y):
-		score = starting_y - highest_y
+		GameManager.score = starting_y - highest_y
 		highest_y = GameManager.camera_2d.position.y
 	if (GameManager.mega_shield_count == 1):
 		mega_buff_indicator.self_modulate.a8 = 255
@@ -118,10 +135,10 @@ func _process(delta: float) -> void:
 
 	if (!GameManager.mega_shield_active):
 		rainbow_inf.visible = false
-		label.text = "chance : " + str(GameManager.chancetothrow) + "\nscore : " + str(score/100 + GameManager.bonus_score) 			
+		label.text = "chance : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
 	else:
 		rainbow_inf.visible = true
-		label.text = "chance : " + "\nscore : " + str(score/100 + GameManager.bonus_score) 			
+		label.text = "chance : " + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			GameManager.camera_2d.position.y = ball.position.y

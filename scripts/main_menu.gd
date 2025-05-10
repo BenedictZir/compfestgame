@@ -44,3 +44,7 @@ func _on_exit_button_pressed() -> void:
 
 func _on_menu_music_finished() -> void:
 	menu_music.play()
+
+
+func _on_options_button_pressed() -> void:
+	pass # Replace with function body.

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q73di"]
 size = Vector2(302, 42.2521)
 
-[node name="starting_paltform" type="StaticBody2D"]
+[node name="starting_platform" type="StaticBody2D"]
 scale = Vector2(1, 1.0177)
 script = ExtResource("1_xxxb6")
 

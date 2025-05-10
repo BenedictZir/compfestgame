@@ -1,17 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4s43pl6oq6ij"]
+[gd_scene load_steps=21 format=3 uid="uid://c4s43pl6oq6ij"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_i0jmj"]
 [ext_resource type="FontFile" uid="uid://bnj6dt3eod46e" path="res://assets/wheaton capitals.otf" id="2_4m00c"]
 [ext_resource type="AudioStream" uid="uid://c82pwt0qkm5c" path="res://assets/sfx/2016_ Clement Panchout_ Life is full of Joy.wav" id="2_ulp8y"]
+[ext_resource type="Texture2D" uid="uid://deagslmyn1bag" path="res://assets/PixelGUI/PixelGUI/ExitBtn.png" id="3_0uuww"]
+[ext_resource type="Texture2D" uid="uid://c60e0jv5wolah" path="res://assets/PixelGUI/PixelGUI/PlayBtn.png" id="3_dh5gd"]
+[ext_resource type="Texture2D" uid="uid://dusqlim1ydbdi" path="res://assets/PixelGUI/PixelGUI/PlayClick.png" id="4_bkpci"]
+[ext_resource type="Texture2D" uid="uid://dmmgaxp60eg4g" path="res://assets/PixelGUI/PixelGUI/ExitClick.png" id="4_fhv3u"]
 [ext_resource type="AudioStream" uid="uid://dhg2xcvuy71bj" path="res://assets/sfx/bwot.wav" id="4_iriuf"]
+[ext_resource type="Texture2D" uid="uid://bw6k2udokn8kl" path="res://assets/PixelGUI/PixelGUI/OptBtn.png" id="5_gvfra"]
+[ext_resource type="Texture2D" uid="uid://daj5npvt8rr52" path="res://assets/PixelGUI/PixelGUI/OptClick.png" id="6_qhmbx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_308hy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibfyy"]
+texture = ExtResource("3_dh5gd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhwd3"]
+texture = ExtResource("4_bkpci")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydmvv"]
+texture = ExtResource("3_dh5gd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvmri"]
+texture = ExtResource("5_gvfra")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ieadc"]
+texture = ExtResource("6_qhmbx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0d7dq"]
+texture = ExtResource("5_gvfra")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1fym"]
+texture = ExtResource("3_0uuww")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pa58h"]
+texture = ExtResource("4_fhv3u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_564en"]
+texture = ExtResource("3_0uuww")
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -28,15 +55,15 @@ tween_duration = 0.3
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.396
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -294.0
-offset_top = -78.0
-offset_right = 288.0
-offset_bottom = 78.0
+anchor_bottom = 0.396
+offset_left = -293.0
+offset_top = -102.6
+offset_right = 301.0
+offset_bottom = 148.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -48,19 +75,18 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
-text = "START"
 
 [node name="options_button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.627
+anchor_top = 0.618
 anchor_right = 0.5
-anchor_bottom = 0.627
-offset_left = -294.0
-offset_top = -78.2001
-offset_right = 288.0
-offset_bottom = 77.7999
+anchor_bottom = 0.618
+offset_left = -286.0
+offset_top = -124.8
+offset_right = 300.0
+offset_bottom = 143.2
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -69,22 +95,21 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
 theme_override_fonts/font = ExtResource("2_4m00c")
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
-text = "OPTIONS"
+theme_override_styles/hover = SubResource("StyleBoxTexture_lvmri")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ieadc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0d7dq")
 
 [node name="exit_button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.759
+anchor_top = 0.842
 anchor_right = 0.5
-anchor_bottom = 0.759
-offset_left = -294.0
-offset_top = -78.4001
-offset_right = 288.0
-offset_bottom = 77.5999
+anchor_bottom = 0.842
+offset_left = -282.0
+offset_top = -132.2
+offset_right = 304.0
+offset_bottom = 132.8
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -93,10 +118,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
 theme_override_fonts/font = ExtResource("2_4m00c")
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
-text = "EXIT"
+theme_override_styles/hover = SubResource("StyleBoxTexture_r1fym")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pa58h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_564en")
 
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ulp8y")
@@ -107,6 +131,27 @@ max_distance = 2e+06
 stream = ExtResource("4_iriuf")
 max_distance = 999999.0
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("2_4m00c")
+theme_override_font_sizes/font_size = 150
+text = "jumpin'
+vim"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="finished" from="menu_music" to="." method="_on_menu_music_finished"]

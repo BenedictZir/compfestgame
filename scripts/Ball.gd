@@ -107,6 +107,7 @@ func _on_kill_ball(killer: Variant) -> void:
 		trail_2d.visible = false
 		GameManager.camera_2d.apply_shake(50, 5.0)
 		await get_tree().create_timer(deadparticle.lifetime).timeout
+		GameManager.gameLost = true
 		queue_free()
 		
 

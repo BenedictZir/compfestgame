@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnnaw48i71s22"]
+[gd_scene load_steps=22 format=3 uid="uid://cnnaw48i71s22"]
 
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="1_1ksm1"]
 [ext_resource type="Texture2D" uid="uid://v1kedh7t1ya2" path="res://assets/circle-512.png" id="1_lm1xb"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b88hvnnrngoo7" path="res://scenes/mega_shield.tscn" id="12_pp50y"]
 [ext_resource type="Gradient" uid="uid://ii10s3rld2b1" path="res://gradient/white_to_transparent.tres" id="13_14mvy"]
 [ext_resource type="Script" path="res://addons/trail_2d/trail_2d.gd" id="13_vi83i"]
+[ext_resource type="PackedScene" uid="uid://dxadv7drrssn7" path="res://scenes/charging_particle.tscn" id="17_jsb68"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xhdy7"]
 friction = 0.2
@@ -25,7 +26,7 @@ bounce = 1.0
 radius = 104.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m2fni"]
-radius = 52.0096
+radius = 54.8004
 
 [sub_resource type="Curve" id="Curve_v275k"]
 _data = [Vector2(0, 1), 0.0, -1.39194, 0, 0, Vector2(1, 0.120879), 0.0, 0.0, 0, 0]
@@ -146,6 +147,8 @@ initial_velocity_min = 500.0
 initial_velocity_max = 600.0
 scale_amount_min = 0.08
 scale_amount_max = 0.08
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("17_jsb68")]
 
 [connection signal="activate_mega_shield" from="." to="." method="_on_activate_mega_shield"]
 [connection signal="kill_ball" from="." to="." method="_on_kill_ball"]

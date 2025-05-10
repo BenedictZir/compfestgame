@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="4_wh58s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m30fk"]
-radius = 88.0057
+radius = 91.0055
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5dr64"]
 radius = 81.0062
@@ -18,6 +18,7 @@ script = ExtResource("1_1hi71")
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(103, -100)
 collision_mask = 2
+collision_priority = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("CircleShape2D_m30fk")

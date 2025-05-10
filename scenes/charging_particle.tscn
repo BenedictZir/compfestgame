@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxadv7drrssn7"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 15
+lifetime = 0.3
+speed_scale = 1.5
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2(0, 0)
+radial_accel_min = -200.0
+radial_accel_max = -200.0
