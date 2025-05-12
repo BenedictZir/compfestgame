@@ -6,15 +6,26 @@
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="3_jrnwd"]
 [ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/deadparticle.tscn" id="5_eqwqa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_men42"]
-size = Vector2(1024, 504)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd1na"]
-size = Vector2(1032, 602)
+size = Vector2(1272, 602)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_men42"]
+size = Vector2(1273, 504)
 
 [node name="lava" type="Node2D"]
 modulate = Color(0.886262, 0.886261, 0.886262, 1)
 script = ExtResource("1_bk1m2")
+
+[node name="destroyzone" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="destroyzone"]
+position = Vector2(632, 524)
+shape = SubResource("RectangleShape2D_dd1na")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="destroyzone"]
+position = Vector2(632, 524)
+shape = SubResource("RectangleShape2D_dd1na")
 
 [node name="deadparticle" parent="." instance=ExtResource("5_eqwqa")]
 position = Vector2(511, -205)
@@ -31,7 +42,11 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(512, 290)
+position = Vector2(636.5, 290)
+shape = SubResource("RectangleShape2D_men42")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="killzone"]
+position = Vector2(636.5, 290)
 shape = SubResource("RectangleShape2D_men42")
 
 [node name="deadsfx" type="AudioStreamPlayer2D" parent="."]
@@ -366,6 +381,114 @@ texture = ExtResource("2_du58c")
 position = Vector2(885, 3299.96)
 texture = ExtResource("2_du58c")
 
+[node name="lava48" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(910.625, 494.06)
+texture = ExtResource("2_du58c")
+
+[node name="lava51" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 750.029)
+texture = ExtResource("2_du58c")
+
+[node name="lava97" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(129, 494)
+texture = ExtResource("2_du58c")
+
+[node name="lava98" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(385, 494)
+texture = ExtResource("2_du58c")
+
+[node name="lava99" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(639, 494)
+texture = ExtResource("2_du58c")
+
+[node name="lava100" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(895, 494)
+texture = ExtResource("2_du58c")
+
+[node name="lava101" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(128, 749.996)
+texture = ExtResource("2_du58c")
+
+[node name="lava102" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(377, 749.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava103" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(631, 749.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava104" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(887, 749.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava105" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(128, 493.996)
+texture = ExtResource("2_du58c")
+
+[node name="lava106" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(385, 494)
+texture = ExtResource("2_du58c")
+
+[node name="lava107" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(639, 494)
+texture = ExtResource("2_du58c")
+
+[node name="lava108" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(377, 749.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava109" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(631, 749.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava110" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(910.625, 494.06)
+texture = ExtResource("2_du58c")
+
+[node name="lava111" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 750.029)
+texture = ExtResource("2_du58c")
+
+[node name="lava65" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 1006.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava88" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 1262.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava89" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 1518.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava90" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 1774.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava91" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 2020.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava92" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 2276.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava93" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(902.625, 2532.03)
+texture = ExtResource("2_du58c")
+
+[node name="lava94" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(900.625, 2788.02)
+texture = ExtResource("2_du58c")
+
+[node name="lava95" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(900.625, 3044.02)
+texture = ExtResource("2_du58c")
+
+[node name="lava96" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(900.625, 3300.02)
+texture = ExtResource("2_du58c")
+
 [node name="lava18" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(119, 2787.96)
 texture = ExtResource("2_du58c")
@@ -414,13 +537,198 @@ scale_amount_min = 4.0
 scale_amount_max = 9.0
 color = Color(1, 0.670588, 0.278431, 1)
 
-[node name="destroyzone" type="Area2D" parent="."]
-collision_mask = 5
+[node name="lava1" type="Sprite2D" parent="."]
+position = Vector2(1152, -23)
+texture = ExtResource("1_acoco")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="destroyzone"]
-position = Vector2(512, 524)
-shape = SubResource("RectangleShape2D_dd1na")
+[node name="lava7" type="Sprite2D" parent="."]
+position = Vector2(1151, 233)
+texture = ExtResource("2_du58c")
 
-[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[node name="lava36" type="Sprite2D" parent="."]
+position = Vector2(1151, 489)
+texture = ExtResource("2_du58c")
+
+[node name="lava40" type="Sprite2D" parent="."]
+position = Vector2(1145, 744.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava44" type="Sprite2D" parent="."]
+position = Vector2(1142, 1000.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava56" type="Sprite2D" parent="."]
+position = Vector2(1142, 1256.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava60" type="Sprite2D" parent="."]
+position = Vector2(1142, 1512.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava64" type="Sprite2D" parent="."]
+position = Vector2(1142, 1768.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava76" type="Sprite2D" parent="."]
+position = Vector2(1142, 2014.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava80" type="Sprite2D" parent="."]
+position = Vector2(1142, 2270.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava84" type="Sprite2D" parent="."]
+position = Vector2(1142, 2526.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava27" type="Sprite2D" parent="."]
+position = Vector2(1140, 2782.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava24" type="Sprite2D" parent="."]
+position = Vector2(1140, 3038.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava19" type="Sprite2D" parent="."]
+position = Vector2(1140, 3294.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava37" type="Sprite2D" parent="."]
+position = Vector2(1166.62, 489)
+texture = ExtResource("2_du58c")
+
+[node name="lava41" type="Sprite2D" parent="."]
+position = Vector2(1160.62, 744.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava38" type="Sprite2D" parent="."]
+position = Vector2(1151, 489)
+texture = ExtResource("2_du58c")
+
+[node name="lava42" type="Sprite2D" parent="."]
+position = Vector2(1145, 744.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava39" type="Sprite2D" parent="."]
+position = Vector2(1166.62, 489)
+texture = ExtResource("2_du58c")
+
+[node name="lava43" type="Sprite2D" parent="."]
+position = Vector2(1160.62, 744.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava45" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 1000.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava57" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 1256.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava61" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 1512.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava65" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 1768.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava77" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 2014.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava46" type="Sprite2D" parent="."]
+position = Vector2(123, 396)
+texture = ExtResource("2_du58c")
+
+[node name="lava47" type="Sprite2D" parent="."]
+position = Vector2(117, 651.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava48" type="Sprite2D" parent="."]
+position = Vector2(114, 907.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava58" type="Sprite2D" parent="."]
+position = Vector2(114, 1163.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava62" type="Sprite2D" parent="."]
+position = Vector2(114, 1419.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava66" type="Sprite2D" parent="."]
+position = Vector2(114, 1675.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava78" type="Sprite2D" parent="."]
+position = Vector2(114, 1921.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava49" type="Sprite2D" parent="."]
+position = Vector2(138.625, 396)
+texture = ExtResource("2_du58c")
+
+[node name="lava50" type="Sprite2D" parent="."]
+position = Vector2(132.625, 651.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava51" type="Sprite2D" parent="."]
+position = Vector2(123, 396)
+texture = ExtResource("2_du58c")
+
+[node name="lava52" type="Sprite2D" parent="."]
+position = Vector2(117, 651.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava53" type="Sprite2D" parent="."]
+position = Vector2(138.625, 396)
+texture = ExtResource("2_du58c")
+
+[node name="lava54" type="Sprite2D" parent="."]
+position = Vector2(132.625, 651.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava55" type="Sprite2D" parent="."]
+position = Vector2(129.625, 907.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava59" type="Sprite2D" parent="."]
+position = Vector2(129.625, 1163.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava63" type="Sprite2D" parent="."]
+position = Vector2(129.625, 1419.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava67" type="Sprite2D" parent="."]
+position = Vector2(129.625, 1675.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava79" type="Sprite2D" parent="."]
+position = Vector2(129.625, 1921.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava81" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 2270.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava85" type="Sprite2D" parent="."]
+position = Vector2(1157.62, 2526.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava28" type="Sprite2D" parent="."]
+position = Vector2(1155.62, 2782.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava25" type="Sprite2D" parent="."]
+position = Vector2(1155.62, 3038.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava20" type="Sprite2D" parent="."]
+position = Vector2(1155.62, 3294.96)
+texture = ExtResource("2_du58c")
+
 [connection signal="area_entered" from="destroyzone" to="." method="_on_destroyzone_area_entered"]
 [connection signal="body_entered" from="destroyzone" to="." method="_on_destroyzone_body_entered"]
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbuwvv5qj12t" path="res://assets/pngimg.com - plus_PNG6.png" id="2_42i7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7c6uf"]
-size = Vector2(200, 200)
+size = Vector2(259.5, 255.5)
 
 [node name="plus_chance" type="Area2D"]
 collision_layer = 4
@@ -12,12 +12,12 @@ collision_mask = 2
 script = ExtResource("1_wv374")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(102.5, -102.5)
+position = Vector2(132.25, -130.25)
 shape = SubResource("RectangleShape2D_7c6uf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(102.5, -102.5)
-scale = Vector2(0.29625, 0.26875)
+position = Vector2(132.5, -131.25)
+scale = Vector2(0.32875, 0.323125)
 texture = ExtResource("2_42i7t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

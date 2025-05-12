@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bkx7sb80woioa" path="res://assets/minus_chance.png" id="2_75ox3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28v0h"]
-size = Vector2(200, 200)
+size = Vector2(258, 256)
 
 [node name="minus_chance" type="Area2D"]
 collision_layer = 4
@@ -12,12 +12,12 @@ collision_mask = 2
 script = ExtResource("1_tiwki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(102, -102)
+position = Vector2(131, -130)
 shape = SubResource("RectangleShape2D_28v0h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(102, -102)
-scale = Vector2(0.195313, 0.195313)
+position = Vector2(130, -129)
+scale = Vector2(0.25, 0.248047)
 texture = ExtResource("2_75ox3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

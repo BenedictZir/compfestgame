@@ -4,20 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://dplmmqvc1uvv7" path="res://assets/mega_buff_icon.png" id="2_odbnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51obq"]
-size = Vector2(203, 199)
+size = Vector2(258, 257)
 
 [node name="mega_shield_pickup" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_4s3vt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(103.5, -102)
-scale = Vector2(0.198242, 0.195313)
-texture = ExtResource("2_odbnj")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(103.5, -101.5)
+position = Vector2(131, -130.5)
 shape = SubResource("RectangleShape2D_51obq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(130, -130)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_odbnj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

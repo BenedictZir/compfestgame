@@ -23,10 +23,10 @@ friction = 0.2
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmb00"]
-radius = 104.0
+radius = 146.061
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m2fni"]
-radius = 54.8004
+radius = 74.8003
 
 [sub_resource type="Curve" id="Curve_v275k"]
 _data = [Vector2(0, 1), 0.0, -1.39194, 0, 0, Vector2(1, 0.120879), 0.0, 0.0, 0, 0]
@@ -49,10 +49,13 @@ preprocess = 0.4
 speed_scale = 1.8
 local_coords = true
 
+[node name="charging_particle" parent="." instance=ExtResource("17_jsb68")]
+visible = false
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0.200001, 0.199997)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.280469, 0.284375)
 texture = ExtResource("1_lm1xb")
 
 [node name="60Fe968c3d624000048712a0" type="Sprite2D" parent="Sprite2D"]
@@ -63,12 +66,12 @@ texture = ExtResource("6_il480")
 
 [node name="shield" parent="." instance=ExtResource("9_133u7")]
 visible = false
-position = Vector2(133, -15)
-scale = Vector2(2.2, 2.2)
+position = Vector2(0, 0)
+scale = Vector2(2.6, 2.6)
 
 [node name="mega_shield" parent="." instance=ExtResource("12_pp50y")]
 position = Vector2(1, 4)
-scale = Vector2(2.3, 2.3)
+scale = Vector2(2.6, 2.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.200001, 0.200001)
@@ -100,6 +103,7 @@ max_distance = 100000.0
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0.200001, 0.200001)
 collision_layer = 0
+collision_priority = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_m2fni")
@@ -147,8 +151,6 @@ initial_velocity_min = 500.0
 initial_velocity_max = 600.0
 scale_amount_min = 0.08
 scale_amount_max = 0.08
-
-[node name="CPUParticles2D" parent="." instance=ExtResource("17_jsb68")]
 
 [connection signal="activate_mega_shield" from="." to="." method="_on_activate_mega_shield"]
 [connection signal="kill_ball" from="." to="." method="_on_kill_ball"]

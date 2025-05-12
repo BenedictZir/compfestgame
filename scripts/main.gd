@@ -55,6 +55,7 @@ var starting_y : float
 @onready var lava: Node2D = $lava
 
 func _ready() -> void:
+	#print($normal_block.position)
 	GameManager.chancetothrow = 10
 	GameManager.bonus_score = 0
 	GameManager.score = 0
@@ -135,10 +136,10 @@ func _process(delta: float) -> void:
 
 	if (!GameManager.mega_shield_active):
 		rainbow_inf.visible = false
-		label.text = "chance : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
+		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
 	else:
 		rainbow_inf.visible = true
-		label.text = "chance : " + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
+		label.text = "fuel : " + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			GameManager.camera_2d.position.y = ball.position.y
@@ -231,9 +232,9 @@ func generate_objects_in_area():
 		if (scene != null):
 			var obj = scene.instantiate()
 
-			x1 = randf_range(70, 900)
+			x1 = randf_range(-63, 961)
 			if (last_picked == obstacle_types):
-				x1 = 70
+				x1 = -63
 			var y = last_generated_y
 			obj.global_position = Vector2(x1, y)
 
@@ -242,11 +243,11 @@ func generate_objects_in_area():
 		if (scene2 != null):
 			var obj = scene2.instantiate()
 
-			x2 = randf_range(70, 900)
+			x2 = randf_range(-63, 961)
 			var try = 0
 			while(abs(x2 - x1) < 400 and try <= 100):
 				try += 1
-				x2 = randf_range(70, 900)
+				x2 = randf_range(-63, 961)
 			if (try >= 100):
 				x2 = x1 + 300
 				if (x2 > 900):

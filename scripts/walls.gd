@@ -1,5 +1,5 @@
 extends Node2D
-var wall_x_coordinate := [-153, 1046]
+var wall_x_coordinate := [-221, 1206]
 @onready var walls: Node2D = $"."
 
 var wall_scene = preload("res://scenes/wall.tscn")

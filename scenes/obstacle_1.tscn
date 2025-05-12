@@ -5,6 +5,7 @@
 [node name="obstacle1" type="Node2D"]
 
 [node name="two_block" parent="." instance=ExtResource("1_tbkbt")]
+position = Vector2(0, 1)
 
 [node name="two_block2" parent="." instance=ExtResource("1_tbkbt")]
-position = Vector2(632, 0)
+position = Vector2(762, 2)

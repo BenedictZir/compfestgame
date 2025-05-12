@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uy1585637ilh" path="res://assets/bubble.png" id="1_vnrtx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6bjyf"]
-radius = 89.2749
+radius = 107.019
 
 [node name="shield_pickup" type="Area2D"]
 position = Vector2(1, 0)
@@ -12,13 +12,13 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_7kqgg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(103.4, -104.6)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_vnrtx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(103.4, -104.6)
+position = Vector2(129, -127)
 shape = SubResource("CircleShape2D_6bjyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128.8, -127.8)
+scale = Vector2(0.250391, 0.250391)
+texture = ExtResource("1_vnrtx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

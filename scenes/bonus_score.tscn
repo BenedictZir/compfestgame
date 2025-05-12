@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/bonus_score.gd" id="1_lyhlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a805f"]
-size = Vector2(200, 200)
+size = Vector2(255, 253)
 
 [node name="bonus_score" type="Area2D"]
 collision_layer = 4
@@ -12,12 +12,12 @@ collision_mask = 2
 script = ExtResource("1_lyhlh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(101, -103)
+position = Vector2(128.5, -129.5)
 shape = SubResource("RectangleShape2D_a805f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(101, -103)
-scale = Vector2(0.195313, 0.195313)
+position = Vector2(129, -130)
+scale = Vector2(0.249024, 0.248047)
 texture = ExtResource("1_eijjj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

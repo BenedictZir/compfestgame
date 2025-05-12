@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://cgbtmeeh0qgd2"]
-
-[node name="explosion_block" type="Node2D"]
-scale = Vector2(1, 1.00408)
