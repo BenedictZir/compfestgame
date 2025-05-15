@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2jkpbngcpd5o"]
+[gd_scene load_steps=5 format=3 uid="uid://c2jkpbngcpd5o"]
 
 [ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="1_fltpc"]
 [ext_resource type="PackedScene" uid="uid://ba1gb01t3df4d" path="res://scenes/plus_chance.tscn" id="2_mhqpf"]
+[ext_resource type="PackedScene" uid="uid://c86f8kv2d0g4u" path="res://scenes/spike_2.tscn" id="3_3fx54"]
+[ext_resource type="PackedScene" uid="uid://cjk3boodew5t1" path="res://scenes/spike_3.tscn" id="4_mgvd4"]
 
 [node name="obstacle_4" type="Node2D"]
 
-[node name="spike" parent="." instance=ExtResource("1_fltpc")]
-position = Vector2(1, -3)
-
-[node name="spike2" parent="." instance=ExtResource("1_fltpc")]
-position = Vector2(258, -3)
-
-[node name="spike3" parent="." instance=ExtResource("1_fltpc")]
-position = Vector2(1020, -1)
-
 [node name="spike4" parent="." instance=ExtResource("1_fltpc")]
-position = Vector2(763, 0)
+position = Vector2(842, 2)
 
 [node name="plus_chance" parent="." instance=ExtResource("2_mhqpf")]
-position = Vector2(507, -223)
+position = Vector2(571, 1)
+
+[node name="spike2" parent="." instance=ExtResource("3_3fx54")]
+position = Vector2(254, 0)
+
+[node name="spike_3" parent="." instance=ExtResource("4_mgvd4")]
+position = Vector2(1147, 2)
+
+[node name="spike_4" parent="." instance=ExtResource("4_mgvd4")]
+position = Vector2(0, 5)

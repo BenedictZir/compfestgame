@@ -7,10 +7,10 @@
 [node name="obstacle_7" type="Node2D"]
 
 [node name="mega_shield_pickup" parent="." instance=ExtResource("1_6mt6f")]
-position = Vector2(1020, -4)
+position = Vector2(1139, -4)
 
 [node name="normal_block" parent="." instance=ExtResource("2_jxr1b")]
-position = Vector2(1022, -252)
+position = Vector2(1141, -252)
 
 [node name="spike" parent="." instance=ExtResource("3_ukep1")]
-position = Vector2(763, -252)
+position = Vector2(834, -211)

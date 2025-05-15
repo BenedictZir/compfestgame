@@ -12,7 +12,6 @@ extends Node2D
 @onready var rainbow_inf: Sprite2D = $CanvasLayer2/rainbow_inf
 @onready var game_over: Control = $CanvasLayer2/game_over
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
 @export var spawn_container: Node2D
 @export var bonus_score_scene: PackedScene
 @export var launch_up_block_scene: PackedScene
@@ -21,6 +20,8 @@ extends Node2D
 @export var plus_chance_scene: PackedScene
 @export var shield_pickup_scene: PackedScene
 @export var spike_scene: PackedScene
+@export var spike2_scene: PackedScene
+@export var spike3_scene: PackedScene
 @export var two_block_scene: PackedScene
 @export var obstacle1_scene :PackedScene
 @export var obstacle2_scene :PackedScene
@@ -35,6 +36,8 @@ extends Node2D
 @export var obstacle7_scene: PackedScene
 @export var obstacle8_scene: PackedScene
 @export var obstacle9_scene: PackedScene
+@export var obstacle10_scene: PackedScene
+@export var obstacle11_scene: PackedScene
 @export var starting_platform: PackedScene 
 #582 234
 var last_picked
@@ -55,13 +58,17 @@ var starting_y : float
 @onready var lava: Node2D = $lava
 
 func _ready() -> void:
-	#print($normal_block.position)
+	
+	#print(obj.position)
 	GameManager.chancetothrow = 10
 	GameManager.bonus_score = 0
 	GameManager.score = 0
+	GameManager.mega_shield_count = 0
 	gameOverShown = false
 	GameManager.gameLost = false
 	spike_types = [
+		spike2_scene,
+		spike3_scene,
 		spike_scene
 		#block_scene,
 		#two_block_scene
@@ -78,7 +85,9 @@ func _ready() -> void:
 		obstacle6_scene,
 		obstacle7_scene,
 		obstacle8_scene,
-		obstacle9_scene
+		obstacle9_scene,
+		obstacle10_scene,
+		obstacle11_scene
 	]
 	enemy_types = [
 		moving_enemy_scene,
@@ -107,7 +116,8 @@ func _ready() -> void:
 	spawnsfx.play()
 	bgmusic.play()
 func _process(delta: float) -> void:
-
+	if ($Timer.is_stopped() and mega_buff_label.visible):
+		$Timer.start()
 	if GameManager.gameLost and !gameOverShown:
 		GameManager.gameStarted = false
 		gameOverShown = true
@@ -126,20 +136,23 @@ func _process(delta: float) -> void:
 	if (GameManager.camera_2d.position.y < highest_y):
 		GameManager.score = starting_y - highest_y
 		highest_y = GameManager.camera_2d.position.y
-	if (GameManager.mega_shield_count == 1):
+	if (GameManager.mega_shield_count >= 1):
 		mega_buff_indicator.self_modulate.a8 = 255
-	if (GameManager.mega_shield_count == 2):
+	if (GameManager.mega_shield_count >= 2):
 		mega_buff_indicator_2.self_modulate.a8 = 255
-	if (GameManager.mega_shield_count == 3):
+	if (GameManager.mega_shield_count >= 3):
 		mega_buff_indicator_3.self_modulate.a8 = 255
 		mega_buff_label.visible = true
 
+
+
+
 	if (!GameManager.mega_shield_active):
 		rainbow_inf.visible = false
-		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
+		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/300 + GameManager.bonus_score) 			
 	else:
 		rainbow_inf.visible = true
-		label.text = "fuel : " + "\nscore : " + str(GameManager.score/100 + GameManager.bonus_score) 			
+		label.text = "fuel : " + "\nscore : " + str(GameManager.score/300 + GameManager.bonus_score) 			
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			GameManager.camera_2d.position.y = ball.position.y
@@ -227,15 +240,19 @@ func generate_objects_in_area():
 				break
 			break
 
-		var height = 600
+		var height = 650
 
 		if (scene != null):
 			var obj = scene.instantiate()
 
-			x1 = randf_range(-63, 961)
+			x1 = randf_range(-121, 1018)
 			if (last_picked == obstacle_types):
-				x1 = -63
+				x1 = -121
 			var y = last_generated_y
+			if (last_picked == spike_types):
+				y += 38
+			if (scene == spike2_scene and x1 > 960):
+				x1 -= 50
 			obj.global_position = Vector2(x1, y)
 
 
@@ -243,16 +260,28 @@ func generate_objects_in_area():
 		if (scene2 != null):
 			var obj = scene2.instantiate()
 
-			x2 = randf_range(-63, 961)
+			x2 = randf_range(-121, 1018)
 			var try = 0
 			while(abs(x2 - x1) < 400 and try <= 100):
 				try += 1
-				x2 = randf_range(-63, 961)
+				x2 = randf_range(-121, 1018)
 			if (try >= 100):
 				x2 = x1 + 300
-				if (x2 > 900):
+				if (x2 > 1000):
 					x2 = x1 - 300
 			var y = last_generated_y
+			if (scene == spike2_scene and x2 > 960):
+				x2 -= 50
+			if (last_picked == spike_types):
+				y += 38
 			obj.global_position = Vector2(x2, y)
 			spawn_container.add_child(obj)
 		last_generated_y -= height
+
+
+func _on_timer_timeout() -> void:
+	var r = randi_range(130, 240)
+	var g = randi_range(130, 240)
+	var b = randi_range(130, 240)
+	var color = Color8(r, g, b, 255)
+	mega_buff_label.add_theme_color_override("font_color", color)

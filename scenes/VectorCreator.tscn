@@ -17,8 +17,7 @@ position = Vector2(572.75, 322)
 shape = SubResource("CircleShape2D_rrvvi")
 
 [node name="arrow" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(863, 324)
+position = Vector2(39.0001, -318)
 rotation = -1.01578
 scale = Vector2(0.154, 0.1)
 texture = ExtResource("2_ol8t6")

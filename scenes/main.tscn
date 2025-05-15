@@ -1,10 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://jdkc6b20lb87"]
+[gd_scene load_steps=50 format=3 uid="uid://jdkc6b20lb87"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_fejfp"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_tokcd"]
 [ext_resource type="PackedScene" uid="uid://cnnaw48i71s22" path="res://scenes/Ball.tscn" id="2_xxkmy"]
 [ext_resource type="FontFile" uid="uid://bnj6dt3eod46e" path="res://assets/wheaton capitals.otf" id="4_3nlel"]
-[ext_resource type="Texture2D" uid="uid://b0db70w1rtcmk" path="res://assets/super_shield.png" id="4_3uiro"]
 [ext_resource type="PackedScene" uid="uid://ba1gb01t3df4d" path="res://scenes/plus_chance.tscn" id="5_lt0g4"]
 [ext_resource type="PackedScene" uid="uid://dcug6wc6tslke" path="res://scenes/launch_up_block.tscn" id="6_4dghr"]
 [ext_resource type="Texture2D" uid="uid://dkosjt0nre2un" path="res://assets/rainbow_infinity.png" id="6_mlugq"]
@@ -32,14 +31,20 @@
 [ext_resource type="PackedScene" uid="uid://bht418dpb8ydu" path="res://scenes/mega_shield_pickup.tscn" id="21_bpjyb"]
 [ext_resource type="PackedScene" uid="uid://dwqu387uxukl6" path="res://scenes/obstacle_9.tscn" id="22_bcjvk"]
 [ext_resource type="PackedScene" uid="uid://cox5k235n2mcg" path="res://scenes/VectorCreator.tscn" id="22_x5wje"]
+[ext_resource type="PackedScene" uid="uid://cnay0ox014lbc" path="res://scenes/obstacle_10.tscn" id="23_4v6fn"]
+[ext_resource type="PackedScene" uid="uid://c013gu8bypeh8" path="res://scenes/obstacle_11.tscn" id="24_4cfv0"]
 [ext_resource type="PackedScene" uid="uid://catbnn8t5co5u" path="res://scenes/shooting_enemy.tscn" id="25_q7q0y"]
 [ext_resource type="PackedScene" uid="uid://doy1db8ily5kp" path="res://scenes/moving_enemy.tscn" id="26_cyfye"]
 [ext_resource type="PackedScene" uid="uid://cpjqffkdtfj30" path="res://scenes/game_over.tscn" id="27_khdx3"]
+[ext_resource type="Texture2D" uid="uid://gd70v0op21em" path="res://assets/assetbeneran/buffs_debuffs/Icon_Buff_MegaShield.png" id="30_so8bs"]
 [ext_resource type="Texture2D" uid="uid://cdv21mlxiawe0" path="res://assets/assetbeneran/Space Layers/6_Background.png" id="36_4b2kn"]
 [ext_resource type="Texture2D" uid="uid://d2aw2g2gnchi0" path="res://assets/assetbeneran/Space Layers/5_Stardust.png" id="37_tjmdl"]
 [ext_resource type="Texture2D" uid="uid://c45lyhxrkeub2" path="res://assets/assetbeneran/Space Layers/4_Planet.png" id="38_0qtwq"]
 [ext_resource type="Texture2D" uid="uid://dkbc22kvuhwfs" path="res://assets/assetbeneran/Space Layers/3_Galaxy.png" id="39_6po5v"]
+[ext_resource type="PackedScene" uid="uid://ch8fvjmucp20u" path="res://scenes/wallright.tscn" id="39_wfdil"]
 [ext_resource type="Texture2D" uid="uid://bx6cllker5tfn" path="res://assets/assetbeneran/Space Layers/2_Stars.png" id="40_2vhds"]
+[ext_resource type="PackedScene" uid="uid://c86f8kv2d0g4u" path="res://scenes/spike_2.tscn" id="43_ddbv5"]
+[ext_resource type="PackedScene" uid="uid://cjk3boodew5t1" path="res://scenes/spike_3.tscn" id="44_4e4yd"]
 
 [sub_resource type="Environment" id="Environment_ynl1j"]
 background_mode = 3
@@ -103,6 +108,8 @@ minus_chance_scene = ExtResource("20_7n50l")
 plus_chance_scene = ExtResource("5_lt0g4")
 shield_pickup_scene = ExtResource("7_xo5u8")
 spike_scene = ExtResource("7_1l16t")
+spike2_scene = ExtResource("43_ddbv5")
+spike3_scene = ExtResource("44_4e4yd")
 two_block_scene = ExtResource("13_lkrq7")
 obstacle1_scene = ExtResource("8_uacss")
 obstacle2_scene = ExtResource("17_v2i3c")
@@ -117,6 +124,8 @@ obstacle6_scene = ExtResource("19_5ii5t")
 obstacle7_scene = ExtResource("20_6kyu2")
 obstacle8_scene = ExtResource("21_203ps")
 obstacle9_scene = ExtResource("22_bcjvk")
+obstacle10_scene = ExtResource("23_4v6fn")
+obstacle11_scene = ExtResource("24_4cfv0")
 starting_platform = ExtResource("18_sii23")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -133,9 +142,9 @@ anchor_left = 0.102667
 anchor_top = 0.0015
 anchor_right = 1.061
 anchor_bottom = 1.0
-offset_left = -7.88
+offset_left = -50.88
 offset_top = -0.4
-offset_right = -7.88013
+offset_right = -50.8801
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -150,21 +159,21 @@ metadata/_edit_use_anchors_ = true
 
 [node name="mega_buff_indicator" type="Sprite2D" parent="CanvasLayer2"]
 self_modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(736.2, 53.2)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_3uiro")
+position = Vector2(773.2, 53.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_so8bs")
 
 [node name="mega_buff_indicator2" type="Sprite2D" parent="CanvasLayer2"]
 self_modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(836.2, 53.2)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_3uiro")
+position = Vector2(873.2, 53.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_so8bs")
 
 [node name="mega_buff_indicator3" type="Sprite2D" parent="CanvasLayer2"]
 self_modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(936.2, 53.2)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_3uiro")
+position = Vector2(973.2, 53.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_so8bs")
 
 [node name="mega_buff" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -177,7 +186,7 @@ offset_right = -5.0
 offset_bottom = 1202.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
+theme_override_colors/font_color = Color(4.33177e-06, 0.69115, 0.422329, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
@@ -188,9 +197,8 @@ text = "press space"
 horizontal_alignment = 1
 
 [node name="rainbow_inf" type="Sprite2D" parent="CanvasLayer2"]
-visible = false
-position = Vector2(539, 53)
-scale = Vector2(0.2, 0.2)
+position = Vector2(335, 42)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_mlugq")
 
 [node name="game_over" parent="CanvasLayer2" instance=ExtResource("27_khdx3")]
@@ -221,19 +229,22 @@ parameters/looping = true
 
 [node name="spawn_container" type="Node2D" parent="."]
 
+[node name="shooting_enemy" parent="spawn_container" instance=ExtResource("25_q7q0y")]
+position = Vector2(556, -767)
+
 [node name="lava" parent="." instance=ExtResource("12_di1i5")]
 z_index = 1
-position = Vector2(-63, -3)
+position = Vector2(-135, -3)
 
 [node name="walls" type="Node2D" parent="."]
 z_index = 2
 script = ExtResource("10_63vom")
 
 [node name="wall" parent="walls" instance=ExtResource("10_dl6qq")]
-position = Vector2(-221, 247)
+position = Vector2(1264, 239)
 
-[node name="wall2" parent="walls" instance=ExtResource("10_dl6qq")]
-position = Vector2(1206, 247)
+[node name="wallleft" parent="walls" instance=ExtResource("39_wfdil")]
+position = Vector2(-228, 239)
 
 [node name="VectorCreator" parent="." instance=ExtResource("22_x5wje")]
 
@@ -248,20 +259,20 @@ position = Vector2(578, -269)
 [node name="background" type="Parallax2D" parent="."]
 z_index = -20
 rotation = -0.00023571
-scroll_scale = Vector2(1, 0.1)
+scroll_scale = Vector2(1, 0.02)
 scroll_offset = Vector2(325, -1714)
 repeat_size = Vector2(0, 5000)
 repeat_times = 5
 
 [node name="background" type="Sprite2D" parent="background"]
-position = Vector2(249.02, -85.9413)
+position = Vector2(251.02, -85.9408)
 scale = Vector2(2, 2)
 texture = ExtResource("36_4b2kn")
 
 [node name="stardust" type="Parallax2D" parent="."]
 z_index = -19
 rotation = -0.00023571
-scroll_scale = Vector2(1, 0.2)
+scroll_scale = Vector2(1, 0.05)
 scroll_offset = Vector2(325, -1714)
 repeat_size = Vector2(0, 5000)
 repeat_times = 5
@@ -274,7 +285,7 @@ texture = ExtResource("37_tjmdl")
 [node name="planet" type="Parallax2D" parent="."]
 z_index = -18
 rotation = -0.00023571
-scroll_scale = Vector2(1, 0.3)
+scroll_scale = Vector2(1, 0.1)
 scroll_offset = Vector2(325, -1714)
 repeat_size = Vector2(0, 5000)
 repeat_times = 5
@@ -287,7 +298,7 @@ texture = ExtResource("38_0qtwq")
 [node name="galaxy" type="Parallax2D" parent="."]
 z_index = -17
 rotation = -0.00023571
-scroll_scale = Vector2(1, 0.4)
+scroll_scale = Vector2(1, 0.2)
 scroll_offset = Vector2(325, -1714)
 repeat_size = Vector2(0, 5000)
 repeat_times = 5
@@ -300,7 +311,7 @@ texture = ExtResource("39_6po5v")
 [node name="stars" type="Parallax2D" parent="."]
 z_index = -16
 rotation = -0.00023571
-scroll_scale = Vector2(1, 0.5)
+scroll_scale = Vector2(1, 0.4)
 scroll_offset = Vector2(325, -1714)
 repeat_size = Vector2(0, 5000)
 repeat_times = 5
@@ -310,4 +321,8 @@ position = Vector2(249.02, -85.9413)
 scale = Vector2(2, 2)
 texture = ExtResource("40_2vhds")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

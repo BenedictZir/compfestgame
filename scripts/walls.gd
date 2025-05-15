@@ -1,16 +1,17 @@
 extends Node2D
-var wall_x_coordinate := [-221, 1206]
+var wall_x_coordinate := [-228, 1264]
 @onready var walls: Node2D = $"."
 
 var wall_scene = preload("res://scenes/wall.tscn")
-@export var spawn_distance := 230
+var wall_left_scene = preload("res://scenes/wallleft.tscn")
+@export var spawn_distance := 198
 @onready var wall: StaticBody2D = $wall
 @onready var lava: Node2D = $"../lava"
 
-var last_y = 240
+var last_y = 247
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(20):
+	for i in range(30):
 		spawn_walls()
 
 
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 			wall.queue_free()
 	
 func spawn_walls():
-	var left_wall = wall_scene.instantiate()
+	var left_wall = wall_left_scene.instantiate()
 	var right_wall = wall_scene.instantiate()
 	last_y -= spawn_distance
 	left_wall.position = Vector2(wall_x_coordinate[0], last_y)

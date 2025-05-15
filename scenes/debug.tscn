@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyjcp7ng8xeq7"]
+[gd_scene load_steps=9 format=3 uid="uid://cyjcp7ng8xeq7"]
 
 [ext_resource type="Script" path="res://scenes/debug.gd" id="1_3up2t"]
 [ext_resource type="PackedScene" uid="uid://catbnn8t5co5u" path="res://scenes/shooting_enemy.tscn" id="1_7j7ha"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cox5k235n2mcg" path="res://scenes/VectorCreator.tscn" id="4_ftdy0"]
 [ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="5_4bjty"]
 [ext_resource type="PackedScene" uid="uid://coe2i74wvgctj" path="res://scenes/trail.tscn" id="6_icp1d"]
+[ext_resource type="PackedScene" uid="uid://doy1db8ily5kp" path="res://scenes/moving_enemy.tscn" id="8_4h3ga"]
 
 [node name="DEBUG" type="Node2D"]
 script = ExtResource("1_3up2t")
@@ -28,3 +29,9 @@ position = Vector2(371, 295)
 
 [node name="shooting_enemy" parent="Node" instance=ExtResource("1_7j7ha")]
 position = Vector2(112, 584)
+
+[node name="spike2" parent="." instance=ExtResource("5_4bjty")]
+position = Vector2(665, 1044)
+
+[node name="moving_enemy" parent="." instance=ExtResource("8_4h3ga")]
+position = Vector2(601, 1026)

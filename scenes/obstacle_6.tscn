@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dklihi5fm6yln"]
+[gd_scene load_steps=4 format=3 uid="uid://dklihi5fm6yln"]
 
 [ext_resource type="PackedScene" uid="uid://pypugkookp5r" path="res://scenes/two_block.tscn" id="1_j8rs3"]
 [ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="2_g70xa"]
+[ext_resource type="PackedScene" uid="uid://dcug6wc6tslke" path="res://scenes/launch_up_block.tscn" id="3_uh8fc"]
 
 [node name="obstacle_6" type="Node2D"]
 
-[node name="two_block" parent="." instance=ExtResource("1_j8rs3")]
-position = Vector2(763, 0)
+[node name="launch_up_block" parent="." instance=ExtResource("3_uh8fc")]
+position = Vector2(1139, -261)
 
 [node name="spike" parent="." instance=ExtResource("2_g70xa")]
-position = Vector2(763, -257)
+position = Vector2(831, -559)
+rotation = 1.57051
+scale = Vector2(1, 1)
+
+[node name="two_block" parent="." instance=ExtResource("1_j8rs3")]
+position = Vector2(882, 0)

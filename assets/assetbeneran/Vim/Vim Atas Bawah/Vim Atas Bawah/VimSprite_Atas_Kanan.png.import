@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cao5a70aux6q8"
+path="res://.godot/imported/VimSprite_Atas_Kanan.png-56a1fdcab916f0e49efc7319992f6407.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Kanan.png"
+dest_files=["res://.godot/imported/VimSprite_Atas_Kanan.png-56a1fdcab916f0e49efc7319992f6407.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7xnx5kr4x8ao"]
+[gd_scene load_steps=6 format=3 uid="uid://c7xnx5kr4x8ao"]
 
-[ext_resource type="Texture2D" uid="uid://d0mnkjk3kym5n" path="res://assets/ruby-red-7290502_640.png" id="1_0kono"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_j2rja"]
+[ext_resource type="Texture2D" uid="uid://budnubjcgipp7" path="res://assets/assetbeneran/enemy/bullet.png" id="2_fvjwh"]
 [ext_resource type="PackedScene" uid="uid://1kmdjxkrenbs" path="res://scenes/break_particle.tscn" id="3_ju0j5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tbby"]
-size = Vector2(30, 26)
+size = Vector2(10, 41)
+
+[sub_resource type="Gradient" id="Gradient_sucu2"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [node name="bullet" type="Area2D"]
 collision_layer = 0
@@ -14,21 +17,26 @@ script = ExtResource("1_j2rja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, 2.38419e-07)
-scale = Vector2(0.046875, 0.11875)
-texture = ExtResource("1_0kono")
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_fvjwh")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -0.500001)
-scale = Vector2(1.5, 1.25)
+position = Vector2(0.562839, -1)
+rotation = 1.5708
+scale = Vector2(0.5, 2.05628)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_7tbby")
 
 [node name="break_particle" parent="." instance=ExtResource("3_ju0j5")]
-self_modulate = Color(0.885524, 0.148898, 6.26662e-05, 1)
+self_modulate = Color(1, 1, 1, 1)
 emitting = false
 amount = 10
 one_shot = true
+color_initial_ramp = SubResource("Gradient_sucu2")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

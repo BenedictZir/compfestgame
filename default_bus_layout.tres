@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://cwqfh05eg8007"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://b08nos81ih8dr"]
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_v6q06"]
 resource_name = "LowPassFilter"
@@ -8,7 +8,7 @@ cutoff_hz = 20000.0
 resource_name = "EQ"
 
 [resource]
-bus/0/volume_db = 6.02
+bus/0/volume_db = 0.0672607
 bus/1/name = &"bgmusic"
 bus/1/solo = false
 bus/1/mute = false

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c013gu8bypeh8"]
+
+[ext_resource type="PackedScene" uid="uid://pypugkookp5r" path="res://scenes/two_block.tscn" id="1_rf35f"]
+[ext_resource type="PackedScene" uid="uid://bb6enm8s770lh" path="res://scenes/normal_block.tscn" id="2_nu5vs"]
+
+[node name="obstacle_11" type="Node2D"]
+
+[node name="two_block" parent="." instance=ExtResource("1_rf35f")]
+position = Vector2(882, -258)
+
+[node name="normal_block" parent="." instance=ExtResource("2_nu5vs")]
+position = Vector2(624, -258)
+
+[node name="normal_block2" parent="." instance=ExtResource("2_nu5vs")]
+position = Vector2(2, -255)

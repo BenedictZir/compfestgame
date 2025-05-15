@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b88hvnnrngoo7"]
 
-[ext_resource type="Texture2D" uid="uid://8v68ssk13m05" path="res://assets/super_shield_border.png" id="1_6qal6"]
 [ext_resource type="Script" path="res://scripts/mega_shield.gd" id="1_56fxx"]
-[ext_resource type="Texture2D" uid="uid://b0db70w1rtcmk" path="res://assets/super_shield.png" id="2_sja36"]
+[ext_resource type="Texture2D" uid="uid://b05hr4rdqehqq" path="res://assets/assetbeneran/buffs_debuffs/Sprite_Buff_MegaShield_Lapis_Belakang.png" id="2_lh27o"]
+[ext_resource type="Texture2D" uid="uid://d4eg1bi3bed6b" path="res://assets/assetbeneran/buffs_debuffs/Sprite_Buff_MegaShield_Lapis_Depan.png" id="3_5fk3r"]
 [ext_resource type="Texture2D" uid="uid://b62l32x0706f7" path="res://assets/startexture.png" id="3_be3a2"]
 
 [sub_resource type="Gradient" id="Gradient_ddeo5"]
@@ -15,19 +15,16 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="mega_shield" type="Node2D"]
-visible = false
 script = ExtResource("1_56fxx")
 
-[node name="border" type="Sprite2D" parent="."]
-position = Vector2(4.57764e-07, -0.5)
-scale = Vector2(0.08, 0.081)
-texture = ExtResource("1_6qal6")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.638)
-position = Vector2(-1, 0)
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_sja36")
+position = Vector2(2.38419e-07, -1.19209e-07)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_lh27o")
+
+[node name="border" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(7.50001, -1.25)
+texture = ExtResource("3_5fk3r")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 20)

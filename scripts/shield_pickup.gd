@@ -1,14 +1,18 @@
 extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var float_amplitude = 10
+var float_speed = 4.0
+var original_y = 0.0
+var time_passed = 0.0
 
+func _ready():
+	original_y = position.y
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	time_passed += delta
+	position.y = original_y + sin(time_passed * float_speed) * float_amplitude
+
 
 
 func _on_body_entered(body: Node2D) -> void:

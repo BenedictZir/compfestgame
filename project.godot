@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="compfest"
+config/name="Jumpin'Vim"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -50,3 +50,4 @@ activate={
 2d_physics/layer_2="ball"
 2d_physics/layer_3="areas"
 2d_physics/layer_4="vectorcreator"
+2d_physics/layer_5="shootingenemy"

@@ -538,7 +538,7 @@ scale_amount_max = 9.0
 color = Color(1, 0.670588, 0.278431, 1)
 
 [node name="lava1" type="Sprite2D" parent="."]
-position = Vector2(1152, -23)
+position = Vector2(1152, -22)
 texture = ExtResource("1_acoco")
 
 [node name="lava7" type="Sprite2D" parent="."]
@@ -727,6 +727,126 @@ texture = ExtResource("2_du58c")
 
 [node name="lava20" type="Sprite2D" parent="."]
 position = Vector2(1155.62, 3294.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava2" type="Sprite2D" parent="."]
+position = Vector2(1408, -23)
+texture = ExtResource("1_acoco")
+
+[node name="lava8" type="Sprite2D" parent="."]
+position = Vector2(1407, 232)
+texture = ExtResource("2_du58c")
+
+[node name="lava68" type="Sprite2D" parent="."]
+position = Vector2(1407, 488)
+texture = ExtResource("2_du58c")
+
+[node name="lava69" type="Sprite2D" parent="."]
+position = Vector2(1401, 743.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava70" type="Sprite2D" parent="."]
+position = Vector2(1398, 999.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava71" type="Sprite2D" parent="."]
+position = Vector2(1398, 1255.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava72" type="Sprite2D" parent="."]
+position = Vector2(1398, 1511.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava73" type="Sprite2D" parent="."]
+position = Vector2(1398, 1767.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava82" type="Sprite2D" parent="."]
+position = Vector2(1398, 2013.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava83" type="Sprite2D" parent="."]
+position = Vector2(1398, 2269.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava86" type="Sprite2D" parent="."]
+position = Vector2(1398, 2525.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava29" type="Sprite2D" parent="."]
+position = Vector2(1396, 2781.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava26" type="Sprite2D" parent="."]
+position = Vector2(1396, 3037.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava21" type="Sprite2D" parent="."]
+position = Vector2(1396, 3293.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava74" type="Sprite2D" parent="."]
+position = Vector2(1422.62, 488)
+texture = ExtResource("2_du58c")
+
+[node name="lava75" type="Sprite2D" parent="."]
+position = Vector2(1416.62, 743.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava87" type="Sprite2D" parent="."]
+position = Vector2(1407, 488)
+texture = ExtResource("2_du58c")
+
+[node name="lava88" type="Sprite2D" parent="."]
+position = Vector2(1401, 743.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava89" type="Sprite2D" parent="."]
+position = Vector2(1422.62, 488)
+texture = ExtResource("2_du58c")
+
+[node name="lava90" type="Sprite2D" parent="."]
+position = Vector2(1416.62, 743.969)
+texture = ExtResource("2_du58c")
+
+[node name="lava91" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 999.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava92" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 1255.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava93" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 1511.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava94" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 1767.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava95" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 2013.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava96" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 2269.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava97" type="Sprite2D" parent="."]
+position = Vector2(1413.62, 2525.97)
+texture = ExtResource("2_du58c")
+
+[node name="lava30" type="Sprite2D" parent="."]
+position = Vector2(1411.62, 2781.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava31" type="Sprite2D" parent="."]
+position = Vector2(1411.62, 3037.96)
+texture = ExtResource("2_du58c")
+
+[node name="lava22" type="Sprite2D" parent="."]
+position = Vector2(1411.62, 3293.96)
 texture = ExtResource("2_du58c")
 
 [connection signal="area_entered" from="destroyzone" to="." method="_on_destroyzone_area_entered"]

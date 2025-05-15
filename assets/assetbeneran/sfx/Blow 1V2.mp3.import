@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boceejxupjk2g"
+path="res://.godot/imported/Blow 1V2.mp3-86c490bc8793fc5d64cc13d363dae6d5.mp3str"
+
+[deps]
+
+source_file="res://assets/assetbeneran/sfx/Blow 1V2.mp3"
+dest_files=["res://.godot/imported/Blow 1V2.mp3-86c490bc8793fc5d64cc13d363dae6d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -17,4 +17,7 @@ func _physics_process(delta: float) -> void:
 	
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if (body.has_method("ball")):
-		body.emit_signal("kill_ball", self)
+		if (body.launching_up or GameManager.mega_shield_active):
+			$AnimationPlayer.play("destroy")
+		else:
+			body.emit_signal("kill_ball", self)

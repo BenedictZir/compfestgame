@@ -5,7 +5,8 @@
 
 [node name="obstacle2" type="Node2D"]
 
-[node name="two_block" parent="." instance=ExtResource("1_ausen")]
-
 [node name="spike" parent="." instance=ExtResource("2_d5heb")]
-position = Vector2(271, -264)
+position = Vector2(210, -557)
+rotation = 1.56377
+
+[node name="two_block" parent="." instance=ExtResource("1_ausen")]

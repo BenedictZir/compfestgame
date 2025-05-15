@@ -1,44 +1,138 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4s43pl6oq6ij"]
+[gd_scene load_steps=39 format=3 uid="uid://c4s43pl6oq6ij"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_i0jmj"]
 [ext_resource type="FontFile" uid="uid://bnj6dt3eod46e" path="res://assets/wheaton capitals.otf" id="2_4m00c"]
 [ext_resource type="AudioStream" uid="uid://c82pwt0qkm5c" path="res://assets/sfx/2016_ Clement Panchout_ Life is full of Joy.wav" id="2_ulp8y"]
-[ext_resource type="Texture2D" uid="uid://deagslmyn1bag" path="res://assets/PixelGUI/PixelGUI/ExitBtn.png" id="3_0uuww"]
-[ext_resource type="Texture2D" uid="uid://c60e0jv5wolah" path="res://assets/PixelGUI/PixelGUI/PlayBtn.png" id="3_dh5gd"]
-[ext_resource type="Texture2D" uid="uid://dusqlim1ydbdi" path="res://assets/PixelGUI/PixelGUI/PlayClick.png" id="4_bkpci"]
-[ext_resource type="Texture2D" uid="uid://dmmgaxp60eg4g" path="res://assets/PixelGUI/PixelGUI/ExitClick.png" id="4_fhv3u"]
+[ext_resource type="Texture2D" uid="uid://bnvmc6udi5j2a" path="res://assets/assetbeneran/ui/drive-download-20250515T100433Z-1-001/Play Button_D.png" id="3_tsbxb"]
+[ext_resource type="Texture2D" uid="uid://c4udv7nqymntu" path="res://assets/assetbeneran/ui/drive-download-20250515T100433Z-1-001/Play_Button_C.png" id="4_aqe6t"]
 [ext_resource type="AudioStream" uid="uid://dhg2xcvuy71bj" path="res://assets/sfx/bwot.wav" id="4_iriuf"]
-[ext_resource type="Texture2D" uid="uid://bw6k2udokn8kl" path="res://assets/PixelGUI/PixelGUI/OptBtn.png" id="5_gvfra"]
-[ext_resource type="Texture2D" uid="uid://daj5npvt8rr52" path="res://assets/PixelGUI/PixelGUI/OptClick.png" id="6_qhmbx"]
+[ext_resource type="Texture2D" uid="uid://btox1bvxrevto" path="res://assets/assetbeneran/ui/drive-download-20250515T100433Z-1-001/Credit_Button_D.png" id="5_vssfb"]
+[ext_resource type="Texture2D" uid="uid://x5ifmfpa14p" path="res://assets/assetbeneran/ui/drive-download-20250515T100433Z-1-001/Credit_Button_C.png" id="6_7hucs"]
+[ext_resource type="Texture2D" uid="uid://ckdtjdc8m8b27" path="res://assets/assetbeneran/ui/drive-download-20250515T100433Z-1-001/Exit_Button_D.png" id="7_e2ii8"]
+[ext_resource type="Texture2D" uid="uid://dqici8dfmkr1d" path="res://assets/assetbeneran/ui/drive-download-20250515T100433Z-1-001/Exit_Button_C.png" id="8_afkn2"]
+[ext_resource type="Texture2D" uid="uid://cdv21mlxiawe0" path="res://assets/assetbeneran/Space Layers/6_Background.png" id="11_fsc60"]
+[ext_resource type="Texture2D" uid="uid://d2aw2g2gnchi0" path="res://assets/assetbeneran/Space Layers/5_Stardust.png" id="12_b8b5b"]
+[ext_resource type="Texture2D" uid="uid://c45lyhxrkeub2" path="res://assets/assetbeneran/Space Layers/4_Planet.png" id="13_j20kk"]
+[ext_resource type="Texture2D" uid="uid://dkbc22kvuhwfs" path="res://assets/assetbeneran/Space Layers/3_Galaxy.png" id="14_4npnu"]
+[ext_resource type="Texture2D" uid="uid://bx6cllker5tfn" path="res://assets/assetbeneran/Space Layers/2_Stars.png" id="15_afofb"]
+[ext_resource type="Texture2D" uid="uid://bw4il4xo2vcov" path="res://assets/assetbeneran/ui/mainmenulabel.png" id="16_oqguc"]
+[ext_resource type="Texture2D" uid="uid://c7qr0hiarlfrn" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Bawah_Depan.png" id="17_0j3du"]
+[ext_resource type="Texture2D" uid="uid://coe31gc8w1jx5" path="res://assets/assetbeneran/Vim/VimSpriteDepan.png" id="17_45y14"]
+[ext_resource type="Texture2D" uid="uid://bqafd260u3rtg" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Bawah_Kiri.png" id="18_fqwjh"]
+[ext_resource type="Script" path="res://scripts/flyingvimgd.gd" id="18_ixixu"]
+[ext_resource type="Texture2D" uid="uid://ncv4e7fjoyp1" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Bawah_Kanan.png" id="19_71q4o"]
+[ext_resource type="Texture2D" uid="uid://dbsexgyyaq1lp" path="res://assets/assetbeneran/Vim/VimSpriteKiri.png" id="21_fs4dc"]
+[ext_resource type="Texture2D" uid="uid://ndvgqanhvi4u" path="res://assets/assetbeneran/Vim/VimSpriteKanan.png" id="22_c80f4"]
+[ext_resource type="Texture2D" uid="uid://dxmnvyqro3y7h" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Depan.png" id="23_o2kf4"]
+[ext_resource type="Texture2D" uid="uid://k8js8k6mnxfk" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Kiri.png" id="24_qpxcv"]
+[ext_resource type="Texture2D" uid="uid://cao5a70aux6q8" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Kanan.png" id="25_76ajf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_308hy"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ibyx"]
+texture = ExtResource("3_tsbxb")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibfyy"]
-texture = ExtResource("3_dh5gd")
+texture = ExtResource("3_tsbxb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhwd3"]
-texture = ExtResource("4_bkpci")
+texture = ExtResource("4_aqe6t")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydmvv"]
-texture = ExtResource("3_dh5gd")
+texture = ExtResource("3_tsbxb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvmri"]
-texture = ExtResource("5_gvfra")
+texture = ExtResource("5_vssfb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ieadc"]
-texture = ExtResource("6_qhmbx")
+texture = ExtResource("6_7hucs")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0d7dq"]
-texture = ExtResource("5_gvfra")
+texture = ExtResource("5_vssfb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1fym"]
-texture = ExtResource("3_0uuww")
+texture = ExtResource("7_e2ii8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pa58h"]
-texture = ExtResource("4_fhv3u")
+texture = ExtResource("8_afkn2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_564en"]
-texture = ExtResource("3_0uuww")
+texture = ExtResource("7_e2ii8")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rket0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_0j3du")
+}],
+"loop": true,
+"name": &"down_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_fqwjh")
+}],
+"loop": true,
+"name": &"down_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_71q4o")
+}],
+"loop": true,
+"name": &"down_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_45y14")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_fs4dc")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_c80f4")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_o2kf4")
+}],
+"loop": true,
+"name": &"up_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_qpxcv")
+}],
+"loop": true,
+"name": &"up_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_76ajf")
+}],
+"loop": true,
+"name": &"up_right",
+"speed": 5.0
+}]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -72,6 +166,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.615686)
 theme_override_fonts/font = ExtResource("2_4m00c")
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_308hy")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4ibyx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ibfyy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hhwd3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ydmvv")
@@ -124,6 +219,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_564en")
 
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ulp8y")
+volume_db = -5.0
 autoplay = true
 max_distance = 2e+06
 
@@ -131,25 +227,84 @@ max_distance = 2e+06
 stream = ExtResource("4_iriuf")
 max_distance = 999999.0
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 54.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 10
-theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("2_4m00c")
-theme_override_font_sizes/font_size = 150
-text = "jumpin'
-vim"
-horizontal_alignment = 1
+[node name="background" type="Parallax2D" parent="."]
+z_index = -20
+rotation = -0.00023571
+scroll_scale = Vector2(1, 0.02)
+scroll_offset = Vector2(325, -1714)
+repeat_size = Vector2(0, 5000)
+repeat_times = 5
+
+[node name="background" type="Sprite2D" parent="background"]
+position = Vector2(251.02, -85.9408)
+scale = Vector2(2, 2)
+texture = ExtResource("11_fsc60")
+
+[node name="stardust" type="Parallax2D" parent="."]
+z_index = -19
+rotation = -0.00023571
+scroll_scale = Vector2(1, 0.05)
+scroll_offset = Vector2(325, -1714)
+repeat_size = Vector2(0, 5000)
+autoscroll = Vector2(0, -15)
+repeat_times = 5
+
+[node name="stardust" type="Sprite2D" parent="stardust"]
+position = Vector2(249.02, -85.9413)
+scale = Vector2(2, 2)
+texture = ExtResource("12_b8b5b")
+
+[node name="planet" type="Parallax2D" parent="."]
+z_index = -18
+rotation = -0.00023571
+scroll_scale = Vector2(1, 0.1)
+scroll_offset = Vector2(325, -1714)
+repeat_size = Vector2(0, 5000)
+autoscroll = Vector2(0, -30)
+repeat_times = 5
+
+[node name="planet" type="Sprite2D" parent="planet"]
+position = Vector2(249.02, -85.9413)
+scale = Vector2(2, 2)
+texture = ExtResource("13_j20kk")
+
+[node name="galaxy" type="Parallax2D" parent="."]
+z_index = -17
+rotation = -0.00023571
+scroll_scale = Vector2(1, 0.2)
+scroll_offset = Vector2(325, -1714)
+repeat_size = Vector2(0, 5000)
+autoscroll = Vector2(0, -45)
+repeat_times = 5
+
+[node name="galaxy" type="Sprite2D" parent="galaxy"]
+position = Vector2(249.02, -85.9413)
+scale = Vector2(2, 2)
+texture = ExtResource("14_4npnu")
+
+[node name="stars" type="Parallax2D" parent="."]
+z_index = -16
+rotation = -0.00023571
+scroll_scale = Vector2(1, 0.4)
+scroll_offset = Vector2(325, -1714)
+repeat_size = Vector2(0, 5000)
+autoscroll = Vector2(0, -69)
+repeat_times = 5
+
+[node name="stars" type="Sprite2D" parent="stars"]
+position = Vector2(249.02, -85.9413)
+scale = Vector2(2, 2)
+texture = ExtResource("15_afofb")
+
+[node name="mainmenulabel" type="Sprite2D" parent="."]
+position = Vector2(542, 273)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("16_oqguc")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rket0")
+animation = &"down_front"
+script = ExtResource("18_ixixu")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]

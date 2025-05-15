@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dck56cn7bpcnl"
+path="res://.godot/imported/Retro Alarm Long 02.wav-42738fdf35e3f334bc36bcf38109eaba.sample"
+
+[deps]
+
+source_file="res://assets/assetbeneran/sfx/Alarms Blip Beeps/Retro Alarm Long 02.wav"
+dest_files=["res://.godot/imported/Retro Alarm Long 02.wav-42738fdf35e3f334bc36bcf38109eaba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

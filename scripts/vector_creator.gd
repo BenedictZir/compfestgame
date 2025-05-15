@@ -57,7 +57,39 @@ func _input(event: InputEvent) -> void:
 		var vector_length = min(vector.length(), maximum_length)
 		#print(vector_length)
 		#ball.rotation = target_rotation
-		ball.sprite_2d.rotation = target_rotation + 1.5
+		# Ini sebaiknya kamu taruh di _input(), di bagian event is InputEventMouseMotion
+		#if (vector.y > 0):
+			#ball.sprite_2d.flip_v = true
+			#ball.sprite_2d.flip_h = true
+		#else:
+			#ball.sprite_2d.flip_v = false
+			#ball.sprite_2d.flip_h = false
+		var sprite_direction = get_direction_name(vector)
+		#if (vector.y < 0):
+			#if (vector.x < 0):
+				#sprite_direction = "up_left"
+			#elif (vector.x > 0):
+				#sprite_direction = "up_right"
+			#else:
+				#sprite_direction = "up_front"
+		#elif (vector.y > 0):
+			#if (vector.x == 0):
+				#sprite_direction = "down_front"
+			#elif (vector.x < 0):
+				#sprite_direction = "down_left"
+			#else:
+				#sprite_direction = "down_right"
+		#elif (vector.y == 0):
+			#if (vector.x > 0):
+				#sprite_direction = "right"
+			#elif (vector.x < 0):
+				#sprite_direction = "left"
+		#else:
+			#sprite_direction = "front"
+		ball.sprite_2d.play(sprite_direction)
+
+
+		#ball.sprite_2d.rotation = target_rotation + 1.5
 		arrow_sprite.global_position = ball.global_position  + (direction * (min(200, vector_length / 10)))
 		arrow_sprite.scale.x = min((vector_length / 20000.0), 0.1) 
 		#print(arrow_sprite.scale.x)
@@ -81,3 +113,23 @@ func _reset() -> void:
 
 func vector_creator():
 	pass
+func get_direction_name(vec: Vector2) -> String:
+	var angle = vec.angle()
+	var deg = angle * 180.0 / PI
+	if deg <= 15 and deg >= -15:
+		return "right"
+	elif deg > 15 and deg <= 75:
+		return "down_right"
+	elif deg > 75 and deg <= 105:
+		return "down_front"
+	elif deg > 105 and deg <= 165:
+		return "down_left"
+	elif deg > 165 or deg <= -165:
+		return "left"
+	elif deg > -165 and deg <= -105:
+		return "up_left"
+	elif deg > -105 and deg <= -75:
+		return "up_front"
+	elif deg > -75 and deg < -15:
+		return "up_right"
+	return "front"

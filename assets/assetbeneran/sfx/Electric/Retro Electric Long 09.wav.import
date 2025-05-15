@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci08qutuc244n"
+path="res://.godot/imported/Retro Electric Long 09.wav-1d86daa082e5b88ebbe6c536d635e5f6.sample"
+
+[deps]
+
+source_file="res://assets/assetbeneran/sfx/Electric/Retro Electric Long 09.wav"
+dest_files=["res://.godot/imported/Retro Electric Long 09.wav-1d86daa082e5b88ebbe6c536d635e5f6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

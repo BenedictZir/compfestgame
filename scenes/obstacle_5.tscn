@@ -16,4 +16,4 @@ position = Vector2(256, -259)
 position = Vector2(512, -64)
 
 [node name="launch_up_block" parent="." index="3" instance=ExtResource("3_uo6pd")]
-position = Vector2(1017, -261)
+position = Vector2(1137, -261)

@@ -9,6 +9,7 @@ extends Control
 @onready var button_sfx: AudioStreamPlayer2D = $button_sfx
 
 func _ready():
+	start_button.disabled = false
 	menu_music.play()
 
 
@@ -33,6 +34,7 @@ func button_hovered(button: Button):
 
 func _on_start_button_pressed() -> void:
 	button_sfx.play()
+	start_button.disabled = true
 	await get_tree().create_timer(0.1).timeout
 	SceneTransition.change_scene("res://scenes/main.tscn")
 

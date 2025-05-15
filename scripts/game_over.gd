@@ -4,6 +4,7 @@ extends Control
 @onready var play_button: Button = $play_button
 @export var tween_intensity: float
 @export var tween_duration: float
+
 @onready var button_sfx: AudioStreamPlayer2D = $button_sfx
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var score: Label = $score
@@ -39,7 +40,7 @@ func _process(delta: float) -> void:
 		shake_strength = 50
 		shake_fade = 5.0
 		shake = false
-	score.text = str(GameManager.score / 100 + GameManager.bonus_score)
+	score.text = str(GameManager.score / 200 + GameManager.bonus_score)
 	button_hovered(play_button)
 	button_hovered(exit_button)
 	
@@ -64,10 +65,12 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_play_button_pressed() -> void:
+	play_button.disabled = true
 	button_sfx.play()
 	await get_tree().create_timer(0.1).timeout
 	SceneTransition.change_scene("res://scenes/main.tscn")
 
 
 func _on_game_over() -> void:
+	play_button.disabled = false
 	animation_player.play("game_over")
