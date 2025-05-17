@@ -14,4 +14,8 @@ func wall():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$collidingsfx.play()
+	if (is_instance_valid(body)):
+		if (body.has_method("ball")):
+			if !body.launching_up:	
+				$collidingsfx.pitch_scale = randf_range(1.2, 1.4)
+				$collidingsfx.play()

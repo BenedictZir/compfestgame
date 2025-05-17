@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca1dpjaktx0ev"]
+[gd_scene load_steps=25 format=3 uid="uid://ca1dpjaktx0ev"]
 
 [ext_resource type="Script" path="res://scripts/minus_chance.gd" id="1_tiwki"]
 [ext_resource type="Texture2D" uid="uid://bn5a4sjhhkydo" path="res://assets/assetbeneran/buffs_debuffs/Debuff_1.png" id="2_8wqrd"]
+[ext_resource type="AudioStream" uid="uid://cqrexo6b73ceh" path="res://assets/assetbeneran/sfx/sound4.wav" id="3_1hcin"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4l2c8"]
 radius = 115.004
@@ -126,6 +127,56 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="Animation" id="Animation_720v3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_on1sw"]
+resource_name = "playsound"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ort3"]
+_data = {
+"RESET": SubResource("Animation_720v3"),
+"playsound": SubResource("Animation_on1sw")
+}
+
 [node name="minus_chance" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
@@ -141,5 +192,15 @@ scale = Vector2(0.372, 0.374)
 sprite_frames = SubResource("SpriteFrames_uaeb8")
 autoplay = "default"
 frame_progress = 0.485431
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1hcin")
+volume_db = -5.0
+pitch_scale = 0.9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4ort3")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

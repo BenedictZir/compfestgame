@@ -1,7 +1,7 @@
 extends Area2D
 signal vector_created(vector)
 @export var maximum_length := 200
-@onready var arrow_sprite: Sprite2D = $arrow
+@onready var arrow_sprite: Node2D = $arrow
 @onready var ball: RigidBody2D = $"../Ball"
 
 var lowpass = AudioServer.get_bus_effect(1, 0)

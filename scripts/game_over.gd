@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 		shake_strength = 50
 		shake_fade = 5.0
 		shake = false
-	score.text = str(GameManager.score / 200 + GameManager.bonus_score)
+	score.text = str(GameManager.score / 320 + GameManager.bonus_score)
 	button_hovered(play_button)
 	button_hovered(exit_button)
 	
@@ -68,7 +68,7 @@ func _on_play_button_pressed() -> void:
 	play_button.disabled = true
 	button_sfx.play()
 	await get_tree().create_timer(0.1).timeout
-	SceneTransition.change_scene("res://scenes/main.tscn")
+	SceneTransition.change_scene("res://scenes/main_menu.tscn")
 
 
 func _on_game_over() -> void:

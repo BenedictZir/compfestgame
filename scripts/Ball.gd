@@ -47,6 +47,7 @@ func launch(force: Vector2) -> void:
 		if (launchparticle.emitting == true):
 			launchparticle.restart()
 		launchparticle.emitting = true
+		throwsfx.pitch_scale = randf_range(0.95, 1.05)
 		throwsfx.play()
 
 func launch_up():
@@ -117,7 +118,6 @@ func _on_kill_ball(killer: Variant) -> void:
 
 
 func _on_activate_mega_shield() -> void:
-	print("BUFF AKTIF")
 	mega_shield.visible = true
 	shield.visible = false
 	GameManager.mega_shield_active = true
@@ -125,7 +125,6 @@ func _on_activate_mega_shield() -> void:
 	mega_shield.mega_shield_particle.emitting = true
 	mega_buff_duration.start()
 	await mega_buff_duration.timeout
-	print("BUFF ABIS")
 	if (shieldIsActive):
 		shield.visible = true
 	mega_shield.visible = false

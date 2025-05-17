@@ -5,7 +5,7 @@ var float_amplitude = 10
 var float_speed = 4.0
 var original_y = 0.0
 var time_passed = 0.0
-
+var taken = false
 func _ready():
 	original_y = position.y
 
@@ -18,6 +18,8 @@ func _process(delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.has_method("activate_shield")):
-		if (GameManager.mega_shield_count != 3):
+		if (GameManager.mega_shield_count != 3 and !taken):
+			taken = true
 			GameManager.mega_shield_count += 1
-		queue_free()
+		$Sprite2D.visible = false
+		$AnimationPlayer.play("playsound")

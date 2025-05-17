@@ -223,7 +223,7 @@ script = ExtResource("13_vi83i")
 length = 20
 
 [node name="mega_buff_duration" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 8.0
 
 [node name="launchparticle" parent="." instance=ExtResource("7_mw4xy")]
 position = Vector2(0, 44)

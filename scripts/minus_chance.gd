@@ -17,4 +17,5 @@ func _process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	if (GameManager.chancetothrow != 0):
 		GameManager.chancetothrow -= 1
-	queue_free()
+	$AnimatedSprite2D.visible = false
+	$AnimationPlayer.play("playsound")

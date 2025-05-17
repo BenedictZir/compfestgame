@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cox5k235n2mcg"]
 
 [ext_resource type="Script" path="res://scripts/vector_creator.gd" id="1_kqtjy"]
-[ext_resource type="Texture2D" uid="uid://c18wli6m31j7o" path="res://assets/60fe968c3d624000048712a0.png" id="2_ol8t6"]
+[ext_resource type="Texture2D" uid="uid://i2cpb4y8m2tt" path="res://assets/assetbeneran/buffs_debuffs/Sprite_Arrow_Penunjuk (1).png" id="3_wq72b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rrvvi"]
 radius = 2192.97
@@ -16,10 +16,13 @@ maximum_length = 3000
 position = Vector2(572.75, 322)
 shape = SubResource("CircleShape2D_rrvvi")
 
-[node name="arrow" type="Sprite2D" parent="."]
-position = Vector2(39.0001, -318)
-rotation = -1.01578
-scale = Vector2(0.154, 0.1)
-texture = ExtResource("2_ol8t6")
+[node name="arrow" type="Node2D" parent="."]
+scale = Vector2(0.1, 0.1)
+
+[node name="arrow6" type="Sprite2D" parent="arrow"]
+position = Vector2(-7.62939e-05, 0.000305176)
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("3_wq72b")
 
 [connection signal="vector_created" from="." to="." method="_on_vector_created"]

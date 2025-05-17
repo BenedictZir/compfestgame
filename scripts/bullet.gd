@@ -6,9 +6,13 @@ var speed: float = 500
 @onready var break_particle: CPUParticles2D = $break_particle
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 func _physics_process(delta: float) -> void:
 	sprite_2d.rotation = direction.angle() + 1.5
+	if (is_instance_valid(collision_shape_2d)):
+		collision_shape_2d.rotation = direction.angle() + 1.5
+	visible_on_screen_notifier_2d.rotation = direction.angle() + 1.5
 	position += direction * speed * delta
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()

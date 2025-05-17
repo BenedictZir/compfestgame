@@ -229,9 +229,6 @@ parameters/looping = true
 
 [node name="spawn_container" type="Node2D" parent="."]
 
-[node name="shooting_enemy" parent="spawn_container" instance=ExtResource("25_q7q0y")]
-position = Vector2(556, -767)
-
 [node name="lava" parent="." instance=ExtResource("12_di1i5")]
 z_index = 1
 position = Vector2(-135, -3)

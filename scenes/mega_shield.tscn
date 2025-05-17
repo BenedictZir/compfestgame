@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d4eg1bi3bed6b" path="res://assets/assetbeneran/buffs_debuffs/Sprite_Buff_MegaShield_Lapis_Depan.png" id="3_5fk3r"]
 [ext_resource type="Texture2D" uid="uid://b62l32x0706f7" path="res://assets/startexture.png" id="3_be3a2"]
 
-[sub_resource type="Gradient" id="Gradient_ddeo5"]
+[sub_resource type="Gradient" id="Gradient_7j4vy"]
 offsets = PackedFloat32Array(0.14, 0.26, 0.373333, 0.5, 0.66, 0.813333, 0.94)
 colors = PackedColorArray(0.909804, 0.0784314, 0.0862745, 1, 1, 0.647059, 0, 1, 0.980392, 0.921569, 0.211765, 1, 0.47451, 0.764706, 0.0784314, 1, 0.282353, 0.490196, 0.905882, 1, 0.294118, 0.211765, 0.615686, 1, 0.439216, 0.211765, 0.615686, 1)
 
@@ -34,7 +34,7 @@ emission_shape = 2
 emission_sphere_radius = 45.0
 scale_amount_min = 0.05
 scale_amount_max = 0.05
-color_ramp = SubResource("Gradient_ddeo5")
+color_ramp = SubResource("Gradient_7j4vy")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 hue_variation_curve = SubResource("Curve_xp7i8")

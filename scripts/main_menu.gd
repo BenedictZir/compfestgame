@@ -7,8 +7,23 @@ extends Control
 @onready var options_button: Button = $options_button
 @onready var exit_button: Button = $exit_button
 @onready var button_sfx: AudioStreamPlayer2D = $button_sfx
+@onready var mainmenulabel: Sprite2D = $mainmenulabel
+var float_amplitude = 10
+var float_speed = 2
+var original_y = 0.0
+var original_y_start = 0.0
+var original_y_credit = 0.0
+var original_y_exit = 0.0
+
+var time_passed = 0.0
+
 
 func _ready():
+	original_y = mainmenulabel.position.y
+	original_y_start = start_button.position.y
+	original_y_credit = options_button.position.y
+	original_y_exit = exit_button.position.y
+	
 	start_button.disabled = false
 	menu_music.play()
 
@@ -16,6 +31,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	time_passed += delta
+	mainmenulabel.position.y = original_y + sin(time_passed * float_speed) * float_amplitude
+	start_button.position.y = original_y_start + sin(time_passed * float_speed) * float_amplitude
+	options_button.position.y = original_y_credit + sin(time_passed * float_speed) * float_amplitude
+	exit_button.position.y = original_y_exit + sin(time_passed * float_speed) * float_amplitude
+	
+	
 	button_hovered(start_button)
 	button_hovered(options_button)
 	button_hovered(exit_button)

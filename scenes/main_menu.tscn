@@ -155,9 +155,9 @@ anchor_top = 0.396
 anchor_right = 0.5
 anchor_bottom = 0.396
 offset_left = -293.0
-offset_top = -102.6
+offset_top = -99.6
 offset_right = 301.0
-offset_bottom = 148.4
+offset_bottom = 151.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -297,7 +297,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("15_afofb")
 
 [node name="mainmenulabel" type="Sprite2D" parent="."]
-position = Vector2(542, 273)
+position = Vector2(542, 271)
 scale = Vector2(0.58, 0.58)
 texture = ExtResource("16_oqguc")
 

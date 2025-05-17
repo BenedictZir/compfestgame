@@ -96,11 +96,12 @@ func _ready() -> void:
 
 	buff_types = [
 		bonus_score_scene,
-		bonus_score_scene,
 		launch_up_block_scene,
 		plus_chance_scene,
 		plus_chance_scene,
 		plus_chance_scene,
+		plus_chance_scene,
+		shield_pickup_scene,
 		shield_pickup_scene
 	]
 	debuff_types = [
@@ -149,10 +150,10 @@ func _process(delta: float) -> void:
 
 	if (!GameManager.mega_shield_active):
 		rainbow_inf.visible = false
-		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/300 + GameManager.bonus_score) 			
+		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/320 + GameManager.bonus_score) 			
 	else:
 		rainbow_inf.visible = true
-		label.text = "fuel : " + "\nscore : " + str(GameManager.score/300 + GameManager.bonus_score) 			
+		label.text = "fuel : " + "\nscore : " + str(GameManager.score/320 + GameManager.bonus_score) 			
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			GameManager.camera_2d.position.y = ball.position.y
@@ -240,7 +241,7 @@ func generate_objects_in_area():
 				break
 			break
 
-		var height = 650
+		var height = 700
 
 		if (scene != null):
 			var obj = scene.instantiate()
