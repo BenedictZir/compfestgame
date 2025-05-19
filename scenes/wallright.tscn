@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ch8fvjmucp20u"]
 
-[ext_resource type="Script" path="res://scripts/wall.gd" id="1_mu64l"]
+[ext_resource type="Script" uid="uid://5u2k8oj5r70o" path="res://scripts/wall.gd" id="1_mu64l"]
 [ext_resource type="AudioStream" uid="uid://b2ctgkfya0nam" path="res://assets/sfx/hitHurt.wav" id="2_78tk7"]
 [ext_resource type="Texture2D" uid="uid://vge6ts2mka45" path="res://assets/assetbeneran/blocks/Wall (1) (1).png" id="3_f1l3d"]
 

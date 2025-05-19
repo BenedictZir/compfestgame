@@ -38,6 +38,7 @@ extends Node2D
 @export var obstacle9_scene: PackedScene
 @export var obstacle10_scene: PackedScene
 @export var obstacle11_scene: PackedScene
+@export var obstacle12_scene: PackedScene
 @export var starting_platform: PackedScene 
 #582 234
 var last_picked
@@ -50,7 +51,7 @@ var buff_types = []
 var mega_buff_types = []
 const SPAWN_INTERVAL_Y := 1000  
 const OBJECTS_PER_BATCH := 8  
-var last_generated_y := -2000
+var last_generated_y := -1000
 var gameOverShown := false
 var ball_y_position
 var highest_y : float
@@ -60,7 +61,7 @@ var starting_y : float
 func _ready() -> void:
 	
 	#print(obj.position)
-	GameManager.chancetothrow = 10
+	GameManager.chancetothrow = 20
 	GameManager.bonus_score = 0
 	GameManager.score = 0
 	GameManager.mega_shield_count = 0
@@ -87,7 +88,8 @@ func _ready() -> void:
 		obstacle8_scene,
 		obstacle9_scene,
 		obstacle10_scene,
-		obstacle11_scene
+		obstacle11_scene,
+		obstacle12_scene
 	]
 	enemy_types = [
 		moving_enemy_scene,
@@ -150,10 +152,10 @@ func _process(delta: float) -> void:
 
 	if (!GameManager.mega_shield_active):
 		rainbow_inf.visible = false
-		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/320 + GameManager.bonus_score) 			
+		label.text = "fuel : " + str(GameManager.chancetothrow) + "\nscore : " + str(GameManager.score/1000 + GameManager.bonus_score) 			
 	else:
 		rainbow_inf.visible = true
-		label.text = "fuel : " + "\nscore : " + str(GameManager.score/320 + GameManager.bonus_score) 			
+		label.text = "fuel : " + "\nscore : " + str(GameManager.score/1000 + GameManager.bonus_score) 			
 	if (is_instance_valid(ball)):
 		if (!ball.died):
 			GameManager.camera_2d.position.y = ball.position.y
@@ -189,25 +191,25 @@ func generate_objects_in_area():
 				scene = debuff_types.pick_random()
 				last_picked = debuff_types
 				break
-			elif chance < 55:
+			elif chance < 45:
 				if (last_picked == buff_types):
 					continue
 				scene = buff_types.pick_random()
 				last_picked = buff_types
 				break
-			elif chance < 75:
+			elif chance < 70:
 				if (last_picked == obstacle_types):
 					continue
 				scene = obstacle_types.pick_random()
 				last_picked = obstacle_types
 				break
-			elif chance < 90:
+			elif chance < 93:
 				if (last_picked == spike_types):
 					continue
 				scene = spike_types.pick_random()
 				last_picked = spike_types
 				break
-			elif chance < 92:
+			elif chance < 95:
 				if (last_picked == mega_buff_types):
 					continue
 				scene = mega_shield_pickup_scene
@@ -241,7 +243,7 @@ func generate_objects_in_area():
 				break
 			break
 
-		var height = 700
+		var height = 680
 
 		if (scene != null):
 			var obj = scene.instantiate()
@@ -252,6 +254,8 @@ func generate_objects_in_area():
 			var y = last_generated_y
 			if (last_picked == spike_types):
 				y += 38
+			if (last_picked == obstacle_types):
+				y += 10
 			if (scene == spike2_scene and x1 > 960):
 				x1 -= 50
 			obj.global_position = Vector2(x1, y)

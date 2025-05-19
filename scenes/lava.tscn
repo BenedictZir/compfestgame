@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://6lj63tmfybdm"]
 
 [ext_resource type="Texture2D" uid="uid://d285sdrikok5w" path="res://assets/Tile_27.png" id="1_acoco"]
-[ext_resource type="Script" path="res://scripts/lava.gd" id="1_bk1m2"]
+[ext_resource type="Script" uid="uid://dryg17a8in26" path="res://scripts/lava.gd" id="1_bk1m2"]
 [ext_resource type="Texture2D" uid="uid://xeah8jixpyl" path="res://assets/Tile_28.png" id="2_du58c"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="3_jrnwd"]
 [ext_resource type="PackedScene" uid="uid://d1eee436hunpo" path="res://scenes/deadparticle.tscn" id="5_eqwqa"]

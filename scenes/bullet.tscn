@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7xnx5kr4x8ao"]
 
-[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_j2rja"]
+[ext_resource type="Script" uid="uid://bb1yonw2rlxv8" path="res://scripts/bullet.gd" id="1_j2rja"]
 [ext_resource type="Texture2D" uid="uid://budnubjcgipp7" path="res://assets/assetbeneran/enemy/bullet.png" id="2_fvjwh"]
 [ext_resource type="PackedScene" uid="uid://1kmdjxkrenbs" path="res://scenes/break_particle.tscn" id="3_ju0j5"]
 

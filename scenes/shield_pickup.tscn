@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://dy2k63i1sdbdh"]
 
-[ext_resource type="Script" path="res://scripts/shield_pickup.gd" id="1_7kqgg"]
+[ext_resource type="Script" uid="uid://dvxh6o2doqgq" path="res://scripts/shield_pickup.gd" id="1_7kqgg"]
 [ext_resource type="Texture2D" uid="uid://2ugesnf1lsh3" path="res://assets/assetbeneran/buffs_debuffs/Buff_Shield.png" id="2_ee6wm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6bjyf"]

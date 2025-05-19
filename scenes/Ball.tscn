@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://cnnaw48i71s22"]
+[gd_scene load_steps=33 format=3 uid="uid://cnnaw48i71s22"]
 
-[ext_resource type="Script" path="res://scripts/Ball.gd" id="1_1ksm1"]
-[ext_resource type="Gradient" uid="uid://coi4ocrehskjp" path="res://gradient/rainbowtres.tres" id="3_owo42"]
+[ext_resource type="Script" uid="uid://pxnw8xuoke4a" path="res://scripts/Ball.gd" id="1_1ksm1"]
 [ext_resource type="PackedScene" uid="uid://co142fj3664v2" path="res://scenes/rocket_particle.tscn" id="4_7dq1k"]
 [ext_resource type="AudioStream" uid="uid://buii3d6xfd2lv" path="res://assets/sfx/jump.wav" id="5_x5y5d"]
 [ext_resource type="Texture2D" uid="uid://c7qr0hiarlfrn" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Bawah_Depan.png" id="6_tum3b"]
@@ -13,15 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://ncv4e7fjoyp1" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Bawah_Kanan.png" id="8_owbl0"]
 [ext_resource type="Texture2D" uid="uid://coe31gc8w1jx5" path="res://assets/assetbeneran/Vim/VimSpriteDepan.png" id="8_yh6if"]
 [ext_resource type="PackedScene" uid="uid://cpo4uc7e0ss8s" path="res://scenes/shield.tscn" id="9_133u7"]
-[ext_resource type="Texture2D" uid="uid://dbsexgyyaq1lp" path="res://assets/assetbeneran/Vim/VimSpriteKiri.png" id="9_dvnce"]
 [ext_resource type="AudioStream" uid="uid://cybyb7v7ayhdg" path="res://assets/sfx/explosion.wav" id="10_ccndw"]
 [ext_resource type="Texture2D" uid="uid://ndvgqanhvi4u" path="res://assets/assetbeneran/Vim/VimSpriteKanan.png" id="10_l8vtk"]
+[ext_resource type="Texture2D" uid="uid://bnnkur0avxt3c" path="res://assets/assetbeneran/VimArahBaru (1).png" id="11_ja72q"]
 [ext_resource type="PackedScene" uid="uid://1kmdjxkrenbs" path="res://scenes/break_particle.tscn" id="12_6lf2w"]
 [ext_resource type="PackedScene" uid="uid://b88hvnnrngoo7" path="res://scenes/mega_shield.tscn" id="12_pp50y"]
 [ext_resource type="Texture2D" uid="uid://dxmnvyqro3y7h" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Depan.png" id="12_y2fbm"]
 [ext_resource type="Texture2D" uid="uid://k8js8k6mnxfk" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Kiri.png" id="13_2bk2j"]
 [ext_resource type="Gradient" uid="uid://ii10s3rld2b1" path="res://gradient/white_to_transparent.tres" id="13_14mvy"]
-[ext_resource type="Script" path="res://addons/trail_2d/trail_2d.gd" id="13_vi83i"]
+[ext_resource type="Script" uid="uid://c4aqjvhupfm4a" path="res://addons/trail_2d/trail_2d.gd" id="13_vi83i"]
 [ext_resource type="Texture2D" uid="uid://cao5a70aux6q8" path="res://assets/assetbeneran/Vim/Vim Atas Bawah/Vim Atas Bawah/VimSprite_Atas_Kanan.png" id="14_27qgj"]
 [ext_resource type="PackedScene" uid="uid://dxadv7drrssn7" path="res://scenes/charging_particle.tscn" id="17_jsb68"]
 [ext_resource type="AudioStream" uid="uid://gkgafkdlnblf" path="res://assets/assetbeneran/sfx/Blops/Retro Blop StereoUP 09.wav" id="19_1l8n6"]
@@ -30,6 +29,14 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xhdy7"]
 friction = 0.2
 bounce = 1.0
+
+[sub_resource type="Gradient" id="Gradient_ja72q"]
+offsets = PackedFloat32Array(0.123377, 0.26, 0.373333, 0.5, 0.597403, 0.694805, 0.785714, 0.88961, 0.961039)
+colors = PackedColorArray(0.160784, 0.556863, 0.756863, 1, 0.12549, 0.686275, 0.803922, 1, 0.505882, 0.901961, 0.647059, 1, 0.482353, 0.898039, 0.627451, 1, 0.478431, 0.823529, 0.823529, 1, 0.298039, 0.823529, 0.823529, 1, 0.12549, 0.686275, 0.803922, 1, 0.301961, 0.823529, 0.631373, 1, 0.298039, 0.823529, 0.823529, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdoav"]
+atlas = ExtResource("11_ja72q")
+region = Rect2(0, 0, 192, 175)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aicf3"]
 animations = [{
@@ -67,7 +74,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_dvnce")
+"texture": SubResource("AtlasTexture_xdoav")
 }],
 "loop": true,
 "name": &"left",
@@ -124,7 +131,7 @@ lock_rotation = true
 continuous_cd = 1
 script = ExtResource("1_1ksm1")
 normal_trail_gradient = ExtResource("13_14mvy")
-rainbow_trail_gradient = ExtResource("3_owo42")
+rainbow_trail_gradient = SubResource("Gradient_ja72q")
 
 [node name="rocket_particle" parent="." instance=ExtResource("4_7dq1k")]
 position = Vector2(1.2, 61.2)
@@ -137,16 +144,16 @@ local_coords = true
 [node name="charging_particle" parent="." instance=ExtResource("17_jsb68")]
 visible = false
 
-[node name="mega_shield" parent="." instance=ExtResource("12_pp50y")]
-visible = false
-position = Vector2(1, 4)
-scale = Vector2(2.6, 2.6)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.200001, -2.8)
 sprite_frames = SubResource("SpriteFrames_aicf3")
-animation = &"up_left"
+animation = &"left"
 autoplay = "front"
+
+[node name="mega_shield" parent="." instance=ExtResource("12_pp50y")]
+visible = false
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(2.5, 2.5)
 
 [node name="shield" parent="." instance=ExtResource("9_133u7")]
 visible = false
@@ -166,19 +173,17 @@ position = Vector2(0.200001, 0.200001)
 [node name="throwsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0.200001, 0.200001)
 stream = ExtResource("5_x5y5d")
-volume_db = -5.0
 max_distance = 100000.0
 
 [node name="rocketsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0.200001, 0.200001)
 stream = ExtResource("6_yg3jg")
-volume_db = -10.0
+volume_db = -5.0
 max_distance = 100000.0
 
 [node name="nochancesfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0.200001, 0.200001)
 stream = ExtResource("7_i5col")
-volume_db = -5.0
 pitch_scale = 0.45
 max_distance = 100000.0
 
@@ -193,8 +198,6 @@ shape = SubResource("CircleShape2D_m2fni")
 [node name="collidingsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0.200001, 0.200001)
 stream = ExtResource("8_3lplf")
-volume_db = -2.0
-pitch_scale = 1.3
 max_distance = 1e+06
 
 [node name="deadsfx" type="AudioStreamPlayer2D" parent="."]
@@ -223,7 +226,7 @@ script = ExtResource("13_vi83i")
 length = 20
 
 [node name="mega_buff_duration" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 6.0
 
 [node name="launchparticle" parent="." instance=ExtResource("7_mw4xy")]
 position = Vector2(0, 44)

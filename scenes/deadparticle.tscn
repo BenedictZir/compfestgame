@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1eee436hunpo"]
 
-[ext_resource type="Script" path="res://scripts/blood_particle.gd" id="1_cdwc6"]
+[ext_resource type="Script" uid="uid://8xt3u8gv53b" path="res://scripts/blood_particle.gd" id="1_cdwc6"]
 
 [sub_resource type="Curve" id="Curve_5tobt"]
 _data = [Vector2(0, 1), 0.0, -0.945055, 0, 1, Vector2(1, 0.054945), 0.0, 0.0, 0, 0]

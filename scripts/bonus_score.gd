@@ -17,6 +17,6 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	GameManager.bonus_score += 50
+	GameManager.bonus_score += 10
 	$AnimatedSprite2D.visible = false
 	$AnimationPlayer.play("playsound")

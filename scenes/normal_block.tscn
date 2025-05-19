@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bb6enm8s770lh"]
 
-[ext_resource type="Script" path="res://scripts/normal_block.gd" id="1_qp50x"]
+[ext_resource type="Script" uid="uid://c2hswdyi0oimi" path="res://scripts/normal_block.gd" id="1_qp50x"]
 [ext_resource type="Texture2D" uid="uid://ma4313dcvqvv" path="res://assets/assetbeneran/blocks/block.png" id="2_xq7hj"]
 [ext_resource type="PackedScene" uid="uid://1kmdjxkrenbs" path="res://scenes/break_particle.tscn" id="3_3uqyq"]
 [ext_resource type="Texture2D" uid="uid://4nebtjv3hal2" path="res://assets/circle-16.png" id="4_en4dv"]
@@ -130,8 +130,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vbyli"]
 _data = {
-"RESET": SubResource("Animation_iyoua"),
-"destroy": SubResource("Animation_v2p3w")
+&"RESET": SubResource("Animation_iyoua"),
+&"destroy": SubResource("Animation_v2p3w")
 }
 
 [node name="normal_block" type="StaticBody2D"]
@@ -143,10 +143,10 @@ self_modulate = Color(1, 1, 1, 1)
 position = Vector2(130, -130)
 emitting = false
 amount = 20
+texture = ExtResource("4_en4dv")
 lifetime = 0.8
 one_shot = true
 speed_scale = 1.5
-texture = ExtResource("4_en4dv")
 initial_velocity_max = 350.0
 scale_amount_min = 4.0
 scale_amount_max = 6.0
@@ -167,7 +167,7 @@ shape = SubResource("RectangleShape2D_bkqwn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vbyli")
+&"": SubResource("AnimationLibrary_vbyli")
 }
 
 [node name="collidingsfx" type="AudioStreamPlayer2D" parent="."]

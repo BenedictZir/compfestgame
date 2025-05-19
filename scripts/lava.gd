@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		return
 	
 	position.y -= speed * delta
-	speed = min(speed + acceleration, 1000)
+	speed = min(speed + acceleration, 2000)
 	#print(speed)
 	floatingparticle.speed_scale = max(1, speed / 50)
 	floatingparticle_2.speed_scale = max(1, speed / 50)

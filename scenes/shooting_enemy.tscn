@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://catbnn8t5co5u"]
 
-[ext_resource type="Script" path="res://scripts/shooting_enemy.gd" id="1_r7oaq"]
+[ext_resource type="Script" uid="uid://cwik10lhjrl3k" path="res://scripts/shooting_enemy.gd" id="1_r7oaq"]
 [ext_resource type="PackedScene" uid="uid://c7xnx5kr4x8ao" path="res://scenes/bullet.tscn" id="2_3k1ip"]
 [ext_resource type="Texture2D" uid="uid://d4jfhgb6y1p6y" path="res://assets/assetbeneran/enemy/Sprite_Enemy_Shoot (1).png" id="3_rglob"]
 [ext_resource type="AudioStream" uid="uid://dmgebnn1e1qu5" path="res://assets/sfx/error.wav" id="4_s3on8"]
@@ -151,8 +151,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vbyli"]
 _data = {
-"RESET": SubResource("Animation_iyoua"),
-"destroy": SubResource("Animation_v2p3w")
+&"RESET": SubResource("Animation_iyoua"),
+&"destroy": SubResource("Animation_v2p3w")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r6wsb"]
@@ -197,17 +197,17 @@ self_modulate = Color(1, 1, 1, 1)
 position = Vector2(67, -66)
 emitting = false
 amount = 20
+texture = ExtResource("7_gxjfq")
 lifetime = 0.8
 one_shot = true
 speed_scale = 1.5
-texture = ExtResource("7_gxjfq")
 initial_velocity_max = 350.0
 scale_amount_min = 4.0
 scale_amount_max = 6.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vbyli")
+&"": SubResource("AnimationLibrary_vbyli")
 }
 
 [node name="collidingsfx" type="AudioStreamPlayer2D" parent="."]

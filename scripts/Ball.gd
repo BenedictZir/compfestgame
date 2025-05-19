@@ -80,7 +80,8 @@ func activate_shield():
 	$CollisionShape2D.scale = Vector2(0.75, 0.75)
 	$shieldsfx.play()
 	shieldIsActive = true
-	shield.visible = true
+	if (!GameManager.mega_shield_active):
+		shield.visible = true
 	shield.shield_sprite.visible = true
 
 
@@ -118,6 +119,8 @@ func _on_kill_ball(killer: Variant) -> void:
 
 
 func _on_activate_mega_shield() -> void:
+	$shieldsfx.play()
+	$CollisionShape2D.scale = Vector2(0.85, 0.85)
 	mega_shield.visible = true
 	shield.visible = false
 	GameManager.mega_shield_active = true
@@ -127,6 +130,8 @@ func _on_activate_mega_shield() -> void:
 	await mega_buff_duration.timeout
 	if (shieldIsActive):
 		shield.visible = true
+	if (is_instance_valid($CollisionShape2D)):
+		$CollisionShape2D.scale = Vector2(0.5, 0.5)
 	mega_shield.visible = false
 	GameManager.mega_shield_active = false
 	mega_shield.mega_shield_particle.emitting = false

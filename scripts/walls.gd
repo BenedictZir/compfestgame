@@ -8,7 +8,7 @@ var wall_left_scene = preload("res://scenes/wallleft.tscn")
 @onready var wall: StaticBody2D = $wall
 @onready var lava: Node2D = $"../lava"
 
-var last_y = 247
+var last_y = 550
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(30):

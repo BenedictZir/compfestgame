@@ -1,6 +1,6 @@
 extends Node
 var camera_2d: Camera2D = null
-var chancetothrow := 10
+var chancetothrow := 20
 var gameStarted = false
 var bonus_score := 0
 var mega_shield_count := 0

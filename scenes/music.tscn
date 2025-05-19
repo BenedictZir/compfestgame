@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://di6rs6n846pw2"]
 
-[ext_resource type="Script" path="res://scripts/music.gd" id="1_3j1d8"]
+[ext_resource type="Script" uid="uid://dd84t86fhnif5" path="res://scripts/music.gd" id="1_3j1d8"]
 [ext_resource type="AudioStream" uid="uid://dadbgkl3qdhnf" path="res://assets/sfx/chip-mode-danijel-zambo-main-version-1431-02-05.mp3" id="2_0e585"]
 
 [node name="music" type="Node2D"]

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Jumpin'Vim"
 run/main_scene="res://scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="res://Ristek_Gamedev.png"
 config/icon="res://icon.svg"
 
@@ -20,6 +20,9 @@ config/icon="res://icon.svg"
 
 GameManager="*res://scripts/game_manager.gd"
 SceneTransition="*res://scenes/scene_transition.tscn"
+SHA512Request="*res://scripts/sha512_request.gd"
+GlobalGameCodeVerifier="*res://scripts/game_code_verifier_new.gd"
+GlobalGamePointSender="*res://scripts/game_point_sender_new.gd"
 
 [display]
 
@@ -42,6 +45,7 @@ ui_touch={
 activate={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
 

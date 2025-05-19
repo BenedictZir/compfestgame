@@ -1,18 +1,17 @@
-[gd_scene load_steps=50 format=3 uid="uid://jdkc6b20lb87"]
+[gd_scene load_steps=52 format=3 uid="uid://jdkc6b20lb87"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_fejfp"]
-[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="2_tokcd"]
+[ext_resource type="Script" uid="uid://nyyese8q0wd3" path="res://scripts/main.gd" id="1_fejfp"]
+[ext_resource type="Script" uid="uid://ccqw17trq7kus" path="res://scripts/camera_2d.gd" id="2_tokcd"]
 [ext_resource type="PackedScene" uid="uid://cnnaw48i71s22" path="res://scenes/Ball.tscn" id="2_xxkmy"]
 [ext_resource type="FontFile" uid="uid://bnj6dt3eod46e" path="res://assets/wheaton capitals.otf" id="4_3nlel"]
 [ext_resource type="PackedScene" uid="uid://ba1gb01t3df4d" path="res://scenes/plus_chance.tscn" id="5_lt0g4"]
 [ext_resource type="PackedScene" uid="uid://dcug6wc6tslke" path="res://scenes/launch_up_block.tscn" id="6_4dghr"]
-[ext_resource type="Texture2D" uid="uid://dkosjt0nre2un" path="res://assets/rainbow_infinity.png" id="6_mlugq"]
 [ext_resource type="PackedScene" uid="uid://bmjuraa27d27u" path="res://scenes/spike.tscn" id="7_1l16t"]
 [ext_resource type="PackedScene" uid="uid://bb6enm8s770lh" path="res://scenes/normal_block.tscn" id="7_1mrfi"]
 [ext_resource type="PackedScene" uid="uid://dy2k63i1sdbdh" path="res://scenes/shield_pickup.tscn" id="7_xo5u8"]
 [ext_resource type="PackedScene" uid="uid://c1rk8r5sauvpy" path="res://scenes/obstacle_1.tscn" id="8_uacss"]
 [ext_resource type="AudioStream" uid="uid://kf6xdbnnneh" path="res://assets/sfx/cyborg-ninja-kevin-macleod-main-version-7993-03-00.mp3" id="9_c3exs"]
-[ext_resource type="Script" path="res://scripts/walls.gd" id="10_63vom"]
+[ext_resource type="Script" uid="uid://c5j6kgpxn41r1" path="res://scripts/walls.gd" id="10_63vom"]
 [ext_resource type="AudioStream" uid="uid://d08gagf5p6afx" path="res://assets/sfx/spawn2.wav" id="10_b1esk"]
 [ext_resource type="PackedScene" uid="uid://rir7n03ft86r" path="res://scenes/wall.tscn" id="10_dl6qq"]
 [ext_resource type="PackedScene" uid="uid://pwjgaa4851v2" path="res://scenes/obstacle_3.tscn" id="10_qd0wn"]
@@ -36,7 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://catbnn8t5co5u" path="res://scenes/shooting_enemy.tscn" id="25_q7q0y"]
 [ext_resource type="PackedScene" uid="uid://doy1db8ily5kp" path="res://scenes/moving_enemy.tscn" id="26_cyfye"]
 [ext_resource type="PackedScene" uid="uid://cpjqffkdtfj30" path="res://scenes/game_over.tscn" id="27_khdx3"]
-[ext_resource type="Texture2D" uid="uid://gd70v0op21em" path="res://assets/assetbeneran/buffs_debuffs/Icon_Buff_MegaShield.png" id="30_so8bs"]
+[ext_resource type="PackedScene" uid="uid://cu21hbsnrm21o" path="res://scenes/obstacle_12.tscn" id="27_vc5cj"]
+[ext_resource type="FontFile" uid="uid://cc0fsfitwhgvt" path="res://assets/assetbeneran/wheaton capitals.otf" id="29_txyw0"]
+[ext_resource type="Texture2D" uid="uid://prdc7rnnq65f" path="res://assets/assetbeneran/superbuff_screen.png" id="30_txyw0"]
+[ext_resource type="Texture2D" uid="uid://cqqsj6rvoftkc" path="res://assets/assetbeneran/infinity (1).png" id="32_txyw0"]
 [ext_resource type="Texture2D" uid="uid://cdv21mlxiawe0" path="res://assets/assetbeneran/Space Layers/6_Background.png" id="36_4b2kn"]
 [ext_resource type="Texture2D" uid="uid://d2aw2g2gnchi0" path="res://assets/assetbeneran/Space Layers/5_Stardust.png" id="37_tjmdl"]
 [ext_resource type="Texture2D" uid="uid://c45lyhxrkeub2" path="res://assets/assetbeneran/Space Layers/4_Planet.png" id="38_0qtwq"]
@@ -93,12 +95,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0gud"]
 _data = {
-"RESET": SubResource("Animation_236jf"),
-"game_over": SubResource("Animation_5xt5a")
+&"RESET": SubResource("Animation_236jf"),
+&"game_over": SubResource("Animation_5xt5a")
 }
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("spawn_container")]
-position = Vector2(-578, 375)
 script = ExtResource("1_fejfp")
 spawn_container = NodePath("spawn_container")
 bonus_score_scene = ExtResource("19_htfkk")
@@ -126,6 +127,7 @@ obstacle8_scene = ExtResource("21_203ps")
 obstacle9_scene = ExtResource("22_bcjvk")
 obstacle10_scene = ExtResource("23_4v6fn")
 obstacle11_scene = ExtResource("24_4cfv0")
+obstacle12_scene = ExtResource("27_vc5cj")
 starting_platform = ExtResource("18_sii23")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -152,7 +154,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("4_3nlel")
+theme_override_fonts/font = ExtResource("29_txyw0")
 theme_override_font_sizes/font_size = 60
 text = "fuel : "
 metadata/_edit_use_anchors_ = true
@@ -161,19 +163,19 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(773.2, 53.2)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("30_so8bs")
+texture = ExtResource("30_txyw0")
 
 [node name="mega_buff_indicator2" type="Sprite2D" parent="CanvasLayer2"]
 self_modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(873.2, 53.2)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("30_so8bs")
+texture = ExtResource("30_txyw0")
 
 [node name="mega_buff_indicator3" type="Sprite2D" parent="CanvasLayer2"]
 self_modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(973.2, 53.2)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("30_so8bs")
+texture = ExtResource("30_txyw0")
 
 [node name="mega_buff" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -197,9 +199,9 @@ text = "press space"
 horizontal_alignment = 1
 
 [node name="rainbow_inf" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(335, 42)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_mlugq")
+position = Vector2(335, 43)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("32_txyw0")
 
 [node name="game_over" parent="CanvasLayer2" instance=ExtResource("27_khdx3")]
 offset_left = 0.0
@@ -238,16 +240,16 @@ z_index = 2
 script = ExtResource("10_63vom")
 
 [node name="wall" parent="walls" instance=ExtResource("10_dl6qq")]
-position = Vector2(1264, 239)
+position = Vector2(1264, 517)
 
 [node name="wallleft" parent="walls" instance=ExtResource("39_wfdil")]
-position = Vector2(-228, 239)
+position = Vector2(-228, 517)
 
 [node name="VectorCreator" parent="." instance=ExtResource("22_x5wje")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u0gud")
+&"": SubResource("AnimationLibrary_u0gud")
 }
 
 [node name="starting_platform" parent="." instance=ExtResource("18_sii23")]

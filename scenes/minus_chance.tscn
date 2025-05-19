@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://ca1dpjaktx0ev"]
 
-[ext_resource type="Script" path="res://scripts/minus_chance.gd" id="1_tiwki"]
+[ext_resource type="Script" uid="uid://dv85si6bwcei7" path="res://scripts/minus_chance.gd" id="1_tiwki"]
 [ext_resource type="Texture2D" uid="uid://bn5a4sjhhkydo" path="res://assets/assetbeneran/buffs_debuffs/Debuff_1.png" id="2_8wqrd"]
 [ext_resource type="AudioStream" uid="uid://cqrexo6b73ceh" path="res://assets/assetbeneran/sfx/sound4.wav" id="3_1hcin"]
 
@@ -173,8 +173,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ort3"]
 _data = {
-"RESET": SubResource("Animation_720v3"),
-"playsound": SubResource("Animation_on1sw")
+&"RESET": SubResource("Animation_720v3"),
+&"playsound": SubResource("Animation_on1sw")
 }
 
 [node name="minus_chance" type="Area2D"]
@@ -200,7 +200,7 @@ pitch_scale = 0.9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4ort3")
+&"": SubResource("AnimationLibrary_4ort3")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
